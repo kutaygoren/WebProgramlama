@@ -1,0 +1,14 @@
+{
+  "name": "web-programlama",
+  "version": "1.0.0",
+  "description": "kahhve.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KutayGoren",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
