@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "kahhve-font-1";
+  src:url("kahhve-font-1.eot");
+  src:url("kahhve-font-1.eot?#iefix") format("embedded-opentype"),
+    url("kahhve-font-1.woff") format("woff"),
+    url("kahhve-font-1.ttf") format("truetype"),
+    url("kahhve-font-1.svg#kahhve-font-1") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "kahhve-font-1" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "kahhve-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-aeropress:before {
+  content: "\e000";
+}
+.icon-chemex:before {
+  content: "\e001";
+}
+.icon-tarti:before {
+  content: "\e002";
+}
+.icon-cold-drip:before {
+  content: "\e003";
+}
+.icon-dripper:before {
+  content: "\e004";
+}
+.icon-espresso:before {
+  content: "\e005";
+}
+.icon-french-press:before {
+  content: "\e006";
+}
+.icon-kahhvecom:before {
+  content: "\e007";
+}
+.icon-kettle:before {
+  content: "\e008";
+}
+.icon-moka-pot:before {
+  content: "\e009";
+}
+.icon-mug:before {
+  content: "\e00a";
+}
+.icon-tamper:before {
+  content: "\e00b";
+}
+.icon-search:before {
+  content: "\e00c";
+}
+.icon-sepet:before {
+  content: "\e00d";
+}
+.icon-info:before {
+  content: "\e00e";
+}
+.icon-hata:before {
+  content: "\e00f";
+}
+.icon-degirmen:before {
+  content: "\e010";
+}
+.icon-filtre:before {
+  content: "\e011";
+}
+.icon-kahve:before {
+  content: "\e012";
+}
+.icon-profil:before {
+  content: "\e013";
+}
+.icon-checkbox:before {
+  content: "\e014";
+}
+.icon-checkedbox:before {
+  content: "\e015";
+}
+.icon-kahve-makinesi:before {
+  content: "\e016";
+}
+.icon-yedek-parcalar:before {
+  content: "\e017";
+}
+.icon-kargolama-suresi:before {
+  content: "\e018";
+}
+.icon-ssl:before {
+  content: "\e019";
+}

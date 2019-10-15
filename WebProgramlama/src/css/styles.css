@@ -1,0 +1,3241 @@
+body {
+    font-family: 'Jaldi', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #c65800 !important;
+}
+
+a.turuncu:hover {
+    color: #603813 !important;
+}
+
+a.btn:hover {
+    background-color: #c65800 !important;
+    color: #603813 !important;
+}
+
+a.btn.turuncu:hover {
+    background-color: #603813 !important;
+    color: #c65800 !important;
+}
+
+header.navbar .logo img {
+    width: 70px;
+    padding-top: 6px;
+}
+
+header.navbar.mini .logo img {
+    padding-top: 3px;
+}
+
+header.navbar.navbar-default {
+    height: 80px;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+}
+
+header.navbar.navbar-default.mini {
+    height: 60px;
+}
+
+header.navbar-default .navbar-nav {
+    padding-top: 15px;
+}
+
+header.navbar-default.mini .navbar-nav {
+    padding-top: 5px;
+}
+
+header.navbar-default .navbar-nav > li > a {
+    color: #603813;
+    font-size: 18px;
+}
+
+header.navbar-default .navbar-nav .dropdown-menu {
+    width: 350px;
+}
+
+header.navbar-default .navbar-nav .dropdown-menu > li > a {
+    color: #603813;
+    font-size: 16px;
+}
+
+header .arama-kelimesi {
+    height: 50px;
+}
+
+header .icon {
+    background-position: center center;
+    height: 50px;
+    background-repeat: no-repeat;
+    width: 50px;
+}
+
+header.navbar-default .navbar-nav > li > a.sepete {
+    position: absolute;
+    top: 3px;
+    left: 11px;
+    padding: 0;
+    font-size: 24px;
+}
+
+header .sepet .icon-sepet {
+    font-size: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+header .sepet .pencere {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    display: none;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    padding: 20px;
+    border: solid 2px #c65800;
+    z-index: 1000;
+    line-height: 24px;
+}
+
+.pencere li {
+    line-height: 30px;
+}
+
+header .sepet .pencere a.btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+header.navbar-default .navbar-nav > li > a.search {
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+header .navbar-header .navbar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    border: none;
+}
+
+header .navbar-header .icon-profil {
+    position: absolute;
+    right: 80px;
+    top: 26px;
+    font-size: 30px;
+}
+
+header .navbar-header .icon-search {
+    position: absolute;
+    right: 130px;
+    top: 26px;
+    font-size: 30px;
+}
+
+header .navbar-header .favori-icon {
+    font-size: 32px;
+    padding: 12px 15px 0 0;
+    -webkit-text-stroke: 1.5px white;
+}
+
+header .navbar-header .sepet.icon {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+header .navbar-header .sepete {
+    font-size: 32px;
+    position: absolute;
+    right: 25px;
+    top: -10px;
+}
+
+.modal-sepet .btn {
+    font-size: 16px
+}
+
+.modal-sepet .modal-title i {
+    font-size: 40px;
+}
+
+.modal-sepet .modal-title span {
+    vertical-align: top;
+    padding-left: 10px;
+    font-size: 32px;
+}
+
+.search-form {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 95px;
+    background-color: white;
+    z-index: 1001;
+    display: none;
+}
+
+.search-form div.container {
+    padding-right: 50px;
+    position: relative;
+}
+
+.search-form button {
+    padding: 0;
+    border: none;
+    position: absolute;
+    vertical-align: middle;
+    right: 60px;
+    top: 12px;
+    font-size: 24px;
+    background-color: transparent;
+}
+
+.search-form .close {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+    border: 1px solid #c65800;
+    border-radius: 25px;
+}
+
+.search-form .result {
+    display: block;
+    margin-left: 20px;
+    margin-top: 0;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    right: 50px;
+    overflow: auto;
+    max-height: 500px;
+}
+
+.search-form .result img {
+    width: 100px;
+    display: inline-block;
+}
+
+.search-form .result li span {
+    font-size: 20px;
+    padding-left: 10px;
+    line-height: 100px;
+    width: 100%;
+    display: inline-block ;
+}
+
+.page-content {
+    margin-top: 80px;
+}
+
+section.banner .img {
+    background-size: 40%, auto 100%, auto 100%;
+    background-position: left 60% center, right, right;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding-left: 5%;
+    padding-top: 3%;
+    display: block;
+}
+
+section.banner .banner1 .img {
+    background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to right, #5f3818 50%, rgba(0, 0, 0, 0) 80%), url('https://kahhve.com/img/banner/banner_15022019.jpg');
+}
+
+section.banner .banner2 .img {
+    background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to right, #5f3818 50%, rgba(0, 0, 0, 0) 80%), url('https://kahhve.com/img/banner/banner_02102019.jpg');
+}
+
+section.banner .banner3 .img {
+    background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to right, #5f3818 50%, rgba(0, 0, 0, 0) 80%), url('https://kahhve.com/img/banner/banner3.jpg');
+}
+
+section.banner .top1 {
+    font-size: 94px;
+    line-height: 94px;
+    max-width: 600px;
+}
+
+section.banner .top2 {
+    font-size: 44px;
+    line-height: 44px;
+    max-width: 600px;
+}
+
+section.banner .top3 {
+    font-size: 24px;
+    max-width: 600px;
+}
+
+section.banner img {
+    height: 400px;
+    width: 100%;
+}
+
+section.urunserit h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #603813;
+}
+
+section.urunserit .btn {
+    background-color: #603813;
+    border-radius: 10px;
+    color: white;
+    padding: 8px 10px;
+    margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    width: 200px;
+}
+
+.urun {
+    padding: 0 25px 30px 25px;
+}
+
+.urun .resim {
+    display: block;
+    position: relative;
+}
+
+.urun img {
+    border: solid 2px #c65800;
+}
+
+.urun .title {
+    color: #c65800;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.urun .title .inner-title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+.urun .marka {
+    color: #a2a2a2;
+    font-size: 16px;
+}
+
+.urun .fiyat {
+    color: #603813;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+oldprice {
+    position: relative;
+    display: inline-block;
+}
+
+oldprice line {
+    border-top: 2px solid #c65800;
+    left: -3px;
+    position: absolute;
+    transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -ms-transform-origin: 42% 52%;
+    -webkit-transform: rotate(-3deg);
+    -webkit-transform-origin: 42% 52%;
+    transform-origin: 42% 52%;
+}
+
+.urun oldprice {
+    width: 80px;
+}
+
+.urun-detay oldprice {
+    width: 200px;
+}
+
+.urun oldprice line {
+    width: 80px;
+    top: 13px;
+}
+
+.urun-detay oldprice line {
+    width: 200px;
+    top: 32px;
+}
+
+.urun i {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    height: 32px;
+    padding: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.urun .stokta-yok {
+    padding: 5px 10px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    z-index: 100;
+}
+
+section.markalarimiz .row {
+    margin-bottom: 50px;
+}
+
+section.ozelliklerimiz {
+    width: 95%;
+    margin: auto;
+}
+
+section.ozelliklerimiz .ust-resim {
+    position: relative;
+}
+
+section.ozelliklerimiz .baslik {
+    color: white;
+    font-size: 64px;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+}
+
+section.ozelliklerimiz .baslik .inner {
+    background-color: rgba(255, 255, 255, 0.65);
+    display: inline-block;
+    padding: 5px 25px;
+}
+
+section.ozelliklerimiz .govde {
+    margin-top: -50px;
+    padding: 0;
+}
+
+section.ozelliklerimiz .govde .icon {
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: -3px 5px 10px rgba(96, 56, 19, 0.40);
+    background-color: white;
+    display: inline-block;
+}
+
+section.ozelliklerimiz .govde .icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.uclu {
+    margin: 20px 0;
+}
+
+.uclu .bolum {
+    padding: 0;
+    color: #ffffff;
+}
+
+.uclu .bolum p {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.uclu h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.uclu .bolum div {
+    background-size: cover;
+    background-position: bottom;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.uclu .kultur {
+    background-image: url('https://kahhve.com/zeplin/img/layout/kitap.jpg');
+}
+
+.uclu a:hover .kultur {
+    color: white !important;
+    border: 2px solid #c65800;
+}
+
+.uclu .subscription-outer {
+    background-image: url('https://kahhve.com/zeplin/img/layout/mektup.png');
+    background-repeat: no-repeat;
+    background-color: #e7e3d8;
+    background-position-x: right;
+}
+
+.uclu .subscription {
+    padding: 10px;
+    height: 100%;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.11);
+}
+
+.uclu .subscription .btn {
+    font-size: 14px;
+}
+
+.uclu .subscription .mail-bulten {
+    margin-top: 10px;
+}
+
+.uclu .subscription input.mail {
+    border: 1px solid #c65800;
+    line-height: 30px;
+    width: 70%;
+    padding: 10px;
+    color: black
+}
+
+.uclu .subscription input[type="submit"] {
+    height: 45px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 10px;
+    border: none;
+    padding: 0 20px;
+}
+
+.uclu .subscription p {
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+section.detay-urun .urun h5.title {
+    font-size: 22px;
+}
+
+section.detay-urun p {
+    color: #a2a2a2;
+    font-size: 16px;
+}
+
+section.information h2 {
+    font-size: 64px;
+}
+
+section.information div {
+    font-size: 20px;
+}
+
+section.information p {
+    font-size: 16px;
+}
+
+section.information .img {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, #5f3818 60%), url('https://kahhve.com/zeplin/img/orta.jpg');
+    background-size: auto 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding: 40px 0;
+}
+
+section.information .img .inner {
+    width: 50%;
+    border-right: 1px #c65800 dashed;
+    padding: 0 20px;
+}
+
+section.information .sag-bolum {
+    background-color: #5f3818;
+    height: 500px;
+    padding: 40px 20px;
+}
+
+.katalog .baslik {
+    height: 450px;
+    background-size: 100%;
+    padding-top: 30px;
+    background-size: auto 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding: 40px 0;
+}
+
+.katalog .baslik.kahveler {
+    background-image: linear-gradient(to right, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('/zeplin/img/kahve.jpg');
+}
+
+.katalog .baslik.ekipmanlar {
+    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+}
+
+.katalog .baslik h1 {
+    font-size: 74px;
+    line-height: 60px;
+    margin-bottom: 0;
+}
+
+.katalog .baslik h2 {
+    font-size: 40px;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+.katalog .baslik.kahveler h2 {
+    color: #603813;
+}
+
+.katalog .baslik.ekipmanlar h2 {
+    color: #c65800;
+}
+
+.katalog .baslik p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.katalog .baslik p span {
+    font-weight: 500;
+}
+
+.katalog .baslik .back-ekipman {
+    width: 900px;
+    height: 100px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.katalog .baslik.kahveler .back-ekipman {
+    background-image: url('/zeplin/img/Kahveler_ekipmanlar.png');
+}
+
+.katalog .baslik.ekipmanlar .back-ekipman {
+    background-image: url('/zeplin/img/EkipmanAksesuarlar_ekipmanlar.png');
+}
+
+.katalog .siralama {
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+
+.katalog .siralama a.dropdown-toggle {
+    color: #a2a2a2;
+}
+
+.katalog .siralama .dropdown-menu {
+    right: 0;
+    left: unset;
+}
+
+section.katalog {
+    margin: 20px 100px;
+    position: relative;
+    padding-top: 40px;
+}
+
+section.katalog .urunler .urun {
+    padding: 0 25px 30px 25px;
+}
+
+section.katalog .filtreler h3 {
+    font-weight: 700;
+    font-size: 34px;
+}
+
+section.katalog .filtreler li {
+    color: #603813;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+section.katalog .filtreler ul {
+    padding-left: 0;
+}
+
+section.katalog nav.navigation {
+    text-align: center;
+}
+
+section.katalog nav.navigation a {
+    border-color: #c65800;
+}
+
+section.kupa-sayisi {
+    line-height: 300px;
+    height: 300px;
+    background-color: #c65800;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+section.kupa-sayisi .govde {
+    color: white;
+    font-size: 56px;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+    ; font-weight: 100;
+    display: inline-block;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+footer .social li {
+    display: inline-block;
+}
+
+footer.urunserit {
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 0;
+}
+
+footer .social {
+    margin-top: 20px;
+}
+
+footer .social li a {
+    width: 55px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+footer .social .facebook {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: -123px;
+    background-position-y: -195px;
+}
+
+footer .social .twitter {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: -180px;
+    background-position-y: -195px;
+}
+
+footer .social .instagram {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: -238px;
+    background-position-y: -195px;
+}
+
+footer .social .pinterest {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: -355px;
+    background-position-y: -195px;
+}
+
+footer .social .youtube {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: -300px;
+    background-position-y: -195px;
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer .footer-copyright {
+    font-size: 14px;
+    margin: 30px 0 0 0;
+}
+
+footer .beyaz-alan {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+footer .guvenli-alisveris {
+    margin-top: 25px;
+}
+
+footer .guvenli-alisveris div {
+    width: 150px;
+    display: inline-block;
+}
+
+footer .guvenli-alisveris .comodo {
+    width: 130px;
+    height: 40px;
+    display: inline-block;
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: 0px;
+    background-position-y: 112px;
+}
+
+footer .beyaz-alan .kredi-kartlari {
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+    height: 60px;
+    margin-top: 15px;
+}
+
+.turuncu {
+    color: #c65800 !important;
+}
+
+.turuncu-neon {
+    text-shadow: -2px 0 5px #c65800;
+}
+
+.gray {
+    color: #a2a2a2 !important;
+}
+
+.turuncu a {
+    color: #c65800 !important;
+}
+
+.back-turuncu .beyaz a:hover {
+    color: #603813 !important;
+}
+
+.kahve {
+    color: #603813 !important;
+}
+
+.kahve a {
+    color: #603813 !important;
+    text-decoration: none;
+}
+
+.kahve a.turuncu {
+    color: #c65800 !important;
+    text-decoration: none;
+}
+
+.beyaz {
+    color: #ffffff;
+}
+
+.back-turuncu {
+    background-color: #c65800 !important;
+}
+
+.back-gray {
+    background-color: #ebebeb !important;
+}
+
+.back-kahve {
+    background-color: #603813 !important;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.seperator {
+    border-bottom: 3px solid #c65800;
+    margin-top: 30px;
+}
+
+.btn {
+    background-color: #603813;
+    border-radius: 10px;
+    color: white;
+    padding: 8px 10px;
+    margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    max-width: 300px;
+}
+
+input[type="text"], .base-input {
+    border: 2px solid #603813;
+    min-width: 250px;
+    color: #603813;
+    padding: 5px;
+}
+
+.base-input {
+    width: 100%;
+}
+
+textarea {
+    border: 2px solid #603813;
+    min-width: 250px;
+    color: #603813;
+    padding: 5px;
+    height: 100px;
+}
+
+.fiyat {
+    font-size: 0.8em;
+    font-family: 'Jaldi', sans-serif;
+}
+
+.fiyat span {
+    font-size: 1.5em;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.bulutlar {
+    background-image: url("/zeplin/img/bulut.png");
+    background-position: bottom right 50px;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+.beyaz-bulutlar {
+    background-image: url("/zeplin/img/bulut-beyaz.png");
+    background-position: top 20px center;
+    background-repeat: no-repeat;
+}
+
+.turuncu-bulutlar {
+    background-image: url("/zeplin/img/bulut-turuncu.png");
+    background-position: top 20px center;
+    background-repeat: no-repeat;
+}
+
+.alert {
+    background-color: #c65800;
+    border-radius: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.alert span {
+    vertical-align: top;
+    line-height: 37px;
+    padding-left: 10px;
+}
+
+.alert i {
+    font-size: 36px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+ul.no-style {
+    list-style: none;
+}
+
+div.ucan-yazi span {
+    height: 48px;
+    display: inline-block;
+}
+
+div.ucan-yazi .baslangic {
+    width: 20px;
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-baslangic-turuncu.png");
+}
+
+div.ucan-yazi .bitis {
+    width: 119px;
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-bitis-turuncu.png");
+    margin-left: -10px;
+}
+
+div.ucan-yazi .yazi {
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-orta-turuncu.png");
+    line-height: 42px;
+    margin-left: -10px;
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: top;
+    padding: 0 10px;
+}
+
+div.ucan-yazi.turuncu .yazi {
+    line-height: 100px;
+    padding-left: 10px;
+    font-size: f 34px;
+}
+
+div.ucan-yazi.turuncu span {
+    height: 110px;
+}
+
+div.ucan-yazi.turuncu .baslangic {
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-baslangic-turuncu.png");
+}
+
+div.ucan-yazi.turuncu .bitis {
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-bitis-turuncu.png");
+    width: 290px;
+    background-repeat: no-repeat;
+}
+
+div.ucan-yazi.turuncu .yazi {
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-orta-turuncu.png");
+}
+
+section.katalog .filtreler .ekipman-icons i {
+    font-size: 60px;
+    margin-bottom: -20px;
+    display: inline-block;
+}
+
+section.katalog .filtreler .ekipman-icons li a {
+    color: #888888;
+}
+
+section.katalog .filtreler .ekipman-icons li a div {
+    width: 60px;
+}
+
+section.katalog .filtreler .ekipman-icons li {
+    display: inline-block;
+    width: 80px;
+    vertical-align: top;
+}
+
+section.katalog .filtreler .ekipman-icons li .inner {
+    float: left;
+}
+
+section.katalog .filtreler .ekipman-icons div {
+    font-size: 10px;
+}
+
+div.sepet-page {
+    background-image: url("/zeplin/img/bulutlar.png");
+    background-position: bottom 70px right 50px;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    min-height: 500px;
+}
+
+div.sepet-page img {
+    width: 210px;
+    height: 210px;
+    border: solid 2px #c65800;
+}
+
+div.sepet-page h1 {
+    font-size: 54px;
+}
+
+div.sepet-page .header p {
+    font-size: 28px;
+}
+
+div.sepet-page .urun-ismi {
+    font-size: 48px;
+    line-height: 48px;
+}
+
+div.sepet-page .marka {
+    font-size: 32px;
+}
+
+div.sepet-page .roboto {
+    font-weight: 300;
+}
+
+div.sepet-page .fiyat {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    height: 36px;
+}
+
+div.sepet-page .fiyat span {
+    font-size: 36px;
+}
+
+section.sepet-urunler .detay {
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.sepet-urunler .sepet-urun {
+    position: relative;
+    margin-top: 30px;
+}
+
+.sepet-page section.sepet-urunler .sepet-urun {
+    margin-top: 0px;
+}
+
+div.sepet-page .kargo-ucreti {
+    margin-top: 30px;
+}
+
+div.sepet-page .kargo-ucreti .ucret {
+    font-size: 32px;
+    display: inline-block;
+}
+
+div.sepet-page .promosyon form {
+    height: 30px;
+    margin-top: 30px;
+}
+
+div.sepet-page .btn {
+    width: 220px;
+    font-size: 22px;
+    margin: 30px 0;
+}
+
+div.sepet-page .toplam {
+    height: 320px;
+    margin-top: 30px;
+}
+
+div.sepet-page .toplam .toplam-yazi {
+    font-size: 54px;
+    line-height: 54px;
+}
+
+div.sepet-page .toplam .toplam-fiyat {
+    font-size: 34px;
+}
+
+div.sepet-page .toplam .toplam-fiyat span {
+    font-size: 44px;
+}
+
+div.sepet-page .toplam a.back-turuncu {
+    margin-top: 0;
+}
+
+div.sepet-page .toplam .not {
+    width: 50%;
+    padding-right: 100px;
+}
+
+div.sepet-page .toplam .not textarea {
+    width: 100%;
+    display: block;
+    height: 150px;
+}
+
+div.sepet-page .toplam .not a {
+    position: absolute;
+}
+
+div.sepet-page .toplam .not .yazi {
+    vertical-align: bottom;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+div.sepet-page input.btn {
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px;
+    width: 90px;
+    padding: 7px 15px;
+    font-size: 14px;
+}
+
+.modal#sepetHata {
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    font-size: 32px;
+    padding: 30px;
+    padding-top: 50px;
+    border: solid 2px #c65800;
+}
+
+.modal#sepetHata .modal-body {
+    padding: 30px;
+}
+
+.modal#sepetHata .modal-body .yazi {
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+div.adres .header {
+    height: 90px;
+    font-size: 42px;
+    padding-top: 30px;
+}
+
+div.adres .ucan-yazi {
+    display: inline-block;
+}
+
+div.adres img {
+    width: 90px;
+    border: solid 2px #c65800;
+}
+
+div.adres .sepet-urun .fiyat {
+    position: absolute;
+    bottom: 0;
+}
+
+div.adres .urun-ismi {
+    font-size: 32px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.adres .marka {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+div.adres .kargo {
+    font-weight: 300;
+    font-size: 24px;
+    padding-top: 25px;
+}
+
+div.adres .toplam {
+    font-size: 34px;
+    padding-top: 15px;
+}
+
+div.adres .adresler {
+    font-size: 24px;
+    min-height: 30px;
+}
+
+div.adres .adresler a.adres-adres {
+    color: #603813;
+}
+
+div.adres .adresler a.duzenle {
+    color: #c65800;
+}
+
+div.adres .adresler div.adres-adres.active {
+    opacity: 1;
+    color: #c65800;
+}
+
+div.adres .adresler .active a.duzenle {
+    color: #603813;
+}
+
+div.adres .adresler .active a.adres-adres {
+    color: #c65800;
+}
+
+.adres .odeme {
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+.adres .odeme .odeme-secenekleri li {
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+}
+
+.adres .odeme .odeme-secenekleri .active a {
+    background-color: #c65800;
+    border-radius: 0;
+    color: white;
+    font-weight: 500;
+}
+
+.adres .odeme .odeme-secenekleri a {
+    line-height: 42px;
+    padding: 10px 0;
+    color: #c65800;
+    margin: 0;
+}
+
+.adres .odeme .odeme-secenekleri {
+    border-bottom: 3px solid #c65800;
+}
+
+.adres .odeme .satir {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.adres .odeme input[type="text"] {
+    font-size: 20px;
+    padding: 5px 0 0 10px;
+}
+
+.adres .odeme .satir input {
+    width: 25%;
+    min-width: auto;
+}
+
+.adres .odeme .satir input.yil {
+    margin-left: 20px;
+}
+
+.adres .odeme .visa {
+    border-bottom: 3px solid #c65800;
+    height: 125px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.adres .odeme .visa .logo {
+    background-image: url("/zeplin/img/visa.png");
+    width: 138px;
+    height: 34px;
+    margin: 0 auto;
+}
+
+.adres .odeme .visa .ssl {
+    background-image: url("/zeplin/img/ssl.png");
+    width: 138px;
+    height: 55px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.adres .odeme .visa .yazi {
+    font-size: 20px;
+    padding-left: 10px;
+    position: absolute;
+    bottom: 23px;
+}
+
+.adres .odeme .toplam {
+    font-size: 52px;
+    border-bottom: 3px solid #c65800;
+    padding-top: 0;
+}
+
+.adres .odeme input[type="submit"] {
+    margin-top: 20px;
+    font-size: 22px;
+    padding: 5px 50px;
+}
+
+.adres .odeme .aciklama {
+    font-size: 20px;
+}
+
+.adresler div.adres-adres {
+    padding: 20px 0;
+    opacity: 0.6;
+}
+
+div.siparis-uye {
+    display: none;
+}
+
+div.siparis-uye .container {
+    font-size: 18px;
+    line-height: 50px;
+    min-height: 50px;
+    padding: 20px 0;
+}
+
+div.siparis-uye .container span {
+    display: inline-block;
+    line-height: 25px;
+    vertical-align: middle;
+}
+
+div.siparis-uye .container a {
+    text-decoration: underline;
+}
+
+.statik .turuncu-bulutlar {
+    padding: 30px 0;
+}
+
+.statik .social {
+    margin-bottom: 30px;
+}
+
+.statik .social a {
+    padding: 5px;
+}
+
+.statik p.ana-yazi {
+    margin: 30px 0;
+}
+
+.statik .panel {
+    margin: 10px;
+}
+
+.markalarimiz-sayfa div {
+    padding: 50px 30px;
+}
+
+.login-page {
+    padding-bottom: 150px;
+}
+
+.login-page.bulutlar {
+    background-position: bottom 100px center;
+}
+
+.login-page form {
+    max-width: 380px;
+    padding: 50px 0;
+}
+
+.login-page .btn {
+    padding: 1% 10%;
+    margin-bottom: 0;
+}
+
+.login-page .btn.fb {
+    background-color: #4852a0;
+}
+
+section.urun-detay {
+    margin-top: 20px;
+}
+
+section.urun-detay img {
+    border: solid 2px #c65800;
+}
+
+section.urun-detay .thumb {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding-right: 30px;
+}
+
+section.urun-detay .thumb img {
+    width: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+section.urun-detay h1 {
+    font-size: 64px;
+    line-height: 54px;
+    margin: 0;
+}
+
+section.urun-detay h2 {
+    font-size: 36px;
+    display: inline;
+}
+
+section.urun-detay .agirlik {
+    color: #a2a2a2;
+    display: inline;
+    font-size: 36px;
+    margin-left: 10px;
+}
+
+section.urun-detay .bilgiler {
+    padding-left: 50px;
+}
+
+section.urun-detay .fiyat {
+    font-size: 32px;
+}
+
+section.urun-detay .dropdown-toggle {
+    background-color: white;
+    border: 2px solid #603813;
+    width: 100%;
+}
+
+section.urun-detay .dropdown-toggle .text {
+    width: 95%;
+    display: inline-block;
+    font-size: 24px;
+}
+
+section.urun-detay .dropdown-toggle .caret {
+    border-top: 18px solid #603813;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+
+section.urun-detay .dropdown-menu {
+    width: 100%;
+}
+
+section.urun-detay .dropdown-menu li {
+    padding: 4px 10px;
+    font-size: 16px;
+    color: #603813;
+}
+
+section.urun-detay .adet {
+    margin-top: 10px;
+    position: relative;
+}
+
+section.urun-detay .adet .dropdown {
+    position: absolute;
+    left: 0;
+    right: 160px;
+    font-size: 32px;
+}
+
+section.urun-detay .adet .adet-ayarlama {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 8px;
+    font-size: 20px;
+}
+
+section.urun-detay .adet .adet-ayarlama span {
+    display: inline-block;
+    width: 30px;
+    line-height: 24px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+section.urun-detay .adet .sepete-ekle {
+    max-width: unset;
+    padding: 8px 60px;
+}
+
+section.urun-detay .stok-out {
+    font-size: 44px;
+}
+
+.breadcrumbs {
+    list-style: none;
+    font-size: 18px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    color: #a2a2a2;
+}
+
+.breadcrumbs li a {
+    color: #a2a2a2;
+}
+
+section.urun-sayfasi-sss {
+    padding: 50px;
+    margin: 100px 0;
+    font-size: 16px;
+}
+
+section.urun-sayfasi-sss .govde {
+    max-width: 800px;
+    margin: auto;
+}
+
+section.urun-sayfasi-sss .soru {
+    display: block;
+    padding: 20px;
+}
+
+section.urun-sayfasi-sss .panel-collapse {
+    padding: 0 40px;
+    margin-bottom: 30px;
+}
+
+.katalog .benzer-urunler h3 {
+    height: 50px;
+}
+
+.katalog .aciklama {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.katalog .aciklama p {
+    text-indent: 30px;
+}
+
+.katalog .urun-ilaveler .ust-kisim {
+    line-height: 80px;
+    font-size: 24px;
+    list-style-type: none;
+}
+
+.katalog .urun-ilaveler .ust-kisim li {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 80%;
+}
+
+.katalog .urun-ilaveler .ust-kisim .active {
+    background-color: #c65800;
+}
+
+.katalog .urun-ilaveler .ust-kisim .yorumlar {
+    background-image: url('/zeplin/img/yorumlar.png');
+}
+
+.katalog .urun-ilaveler .ust-kisim .soru-cevap {
+    background-image: url('/zeplin/img/soru-cevap.png');
+}
+
+.katalog .urun-ilaveler .tab-content {
+    background-position: center bottom;
+    margin-bottom: 50px;
+    font-size: 24px;
+    min-height: 250px;
+}
+
+.katalog .urun-ilaveler textarea {
+    border: 2px solid #603813;
+}
+
+form.yeni-adres .kayitli-email, #yeniAdres .kayitli-email {
+    font-size: 22px;
+    line-height: 36px;
+}
+
+form.yeni-adres {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+form.yeni-adres input, form.yeni-adres textarea {
+    width: 100%;
+}
+
+form.yeni-adres .hata {
+    border: 3px solid red;
+}
+
+section.siparislerim img {
+    width: 100px;
+}
+
+section.siparislerim a.btn {
+    margin-bottom: 0;
+    width: 150px;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 0;
+}
+
+section.siparislerim .urun-detay {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.ea-select {
+    background-color: transparent;
+    border: 1px solid #603813;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    height: 35px;
+}
+
+.ea-select button {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.ea-select .text {
+    color: #603813;
+    display: inline-block;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.ea-select .caret {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border-top: 18px solid #603813;
+}
+
+.ea-close {
+    border: 1px solid #603813;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    vertical-align: top;
+    font-size: 40px;
+}
+
+.ea-close a {
+    line-height: 30px;
+    display: block;
+}
+
+.sepet-urunler .secenek {
+    width: 350px;
+}
+
+.sepet-urunler .adet {
+    width: 150px;
+    vertical-align: top;
+}
+
+.siparis-onay .anket {
+    overflow: hidden;
+    max-width: 750px;
+}
+
+.siparis-onay .anket input {
+    display: none;
+}
+
+.siparis-onay .anket label {
+    font-weight: 400;
+    border: 1px solid #603813;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.siparis-onay .anket input:checked+label {
+    border-color: #c65800;
+    color: #c65800;
+}
+
+.siparis-onay .yari-gorunur {
+    height: 150px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    transition: all 0.5s ease;
+}
+
+.siparis-yorum .detay {
+    position: absolute;
+    left: 220px;
+    right: 0;
+}
+
+.siparis-yorum .sepet-urun img {
+    width: 200px;
+}
+
+.siparis-yorum textarea {
+    display: inline-block;
+    width: 100%;
+}
+
+.yorum-oy {
+    padding: 10px 0;
+}
+
+.yorum-oy .star {
+    display: inline-block;
+    width: 30px;
+    height: 19px;
+    background: url('/zeplin/img/star_secilidegil.png');
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.yorum-oy .star.secili {
+    background: url('/zeplin/img/star_secili.png')
+}
+
+.checkout-header {
+    position: relative;
+}
+
+.checkout-header .logo {
+    margin-left: 0;
+}
+
+.checkout-header .comodo {
+    width: 130px;
+    height: 40px;
+    position: absolute;
+    background-image: url('https://kahhve.com/zeplin/img/layout.png');
+    background-position-x: 0px;
+    background-position-y: 112px;
+    right: 5px;
+    top: 10px;
+}
+
+.checkout-header .guvenli-alisveris {
+    font-size: 14px;
+    ; position: absolute;
+    ; bottom: 0;
+    right: 10px;
+    width: 100%;
+    text-align: right;
+}
+
+.checkout .ucan-yazi {
+    width: 400px;
+    margin: 35px auto 0 auto;
+}
+
+.checkout .bulutlar {
+    position: relative;
+}
+
+.checkout .ana-form .bolum {
+    background-color: white;
+    position: relative;
+}
+
+.checkout .ana-form .bolum-inner {
+    padding: 20px 30px 20px 70px;
+    position: relative;
+}
+
+.odeme-girdi, .uyelik-girdi, .kargo-girdi, .fatura-girdi, .adres-girdi {
+    display: none;
+}
+
+.odeme-ozet, .uyelik-ozet, .kargo-ozet, .fatura-ozet, .adres-ozet {
+    display: none;
+}
+
+.checkout .ana-form {
+    width: 65%;
+    display: inline-block;
+}
+
+.checkout .ana-form h2 {
+    letter-spacing: 1px;
+    margin: 0;
+    color: #c65800;
+    font-size: 1.5em;
+}
+
+.checkout .ana-form label {
+    display: block;
+}
+
+.checkout .ana-form #uyelik-bilgileri, .checkout .ana-form .uyelik-girdi {
+    width: 330px;
+}
+
+.checkout .checkout-btn {
+    width: 330px;
+    border: none;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.checkout .ana-form .checkout-btn:disabled {
+    background-color: #ccc !important;
+}
+
+.checkout .ana-form .checkout-btn-fb {
+    background-color: #3b5998;
+}
+
+.checkout .ana-form .checkout-duzenle-btn {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    x;background-color: #ebebeb;
+    color: #603813;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-family: 'Jaldi', sans-serif;
+    letter-spacing: 1px;
+}
+
+.checkout .ana-form .veya {
+    margin: 20px;
+}
+
+.checkout .gizli {
+    display: none;
+}
+
+.checkout .sepet-ozet {
+    width: 350px;
+    display: inline-block;
+    right: 0;
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+    position: absolute;
+}
+
+.checkout .sepet-ozet tr {
+    height: 120px;
+}
+
+.checkout .sepet-ozet img {
+    width: 100px;
+}
+
+.checkout .sepet-ozet .detay {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.checkout .sepet-ozet .visa {
+    width: 100%;
+}
+
+.checkout input, .checkout textarea {
+    border: 1px solid #603813;
+    width: 330px;
+    color: #603813;
+    padding: 10px;
+    height: 50px;
+}
+
+.checkout textarea {
+    height: 100px;
+}
+
+.checkout .ana-form .btn-group {
+    width: 100%;
+}
+
+.checkout .ana-form .fatura-secenekleri {
+    display: inline-block;
+    position: relative;
+    width: 40%;
+}
+
+.checkout .ana-form .kargo-secenekleri {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.checkout .ana-form .odeme-secenekleri {
+    position: relative;
+}
+
+.checkout .ana-form .odeme-secenekleri .aciklama {
+    display: none;
+}
+
+.checkout .ana-form .kahhve-radio {
+    display: none;
+}
+
+.checkout .ana-form .kahhve-radio+label {
+    line-height: 25px;
+    padding-left: 30px;
+}
+
+.checkout .ana-form .kahhve-radio:checked+label:before {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #c65800;
+    border-radius: 10px;
+}
+
+.checkout .ana-form .kahhve-radio+label:after {
+    border-radius: 50%;
+    border: 2px solid #bfbfbf;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px !important;
+    height: 22px !important;
+    content: '';
+}
+
+.checkout .ana-form .kahhve-checkbox+label:before {
+    font-family: 'Glyphicons Halflings';
+    font-size: 18px;
+    width: 17px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 2px;
+    top: -5px;
+    color: #c65800;
+    z-index: 1;
+    position: absolute;
+}
+
+.checkout .ana-form .kahhve-checkbox+label:after {
+    border-radius: 3px;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #bfbfbf;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+}
+
+.checkout .ana-form .kahhve-checkbox:checked+label:before {
+    content: "\e013"
+}
+
+.checkout .ana-form .kahhve-checkbox {
+    display: none;
+}
+
+.checkout .ana-form .kahhve-checkbox+label {
+    padding-left: 25px;
+}
+
+.checkout .ana-form .control-group {
+    position: relative;
+}
+
+.checkout .ana-form .kredi-karti-formu {
+    width: 330px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.checkout .ana-form .kredi-karti-formu input {
+    min-width: unset;
+}
+
+.checkout .ana-form .kredi-karti-formu .skt {
+    display: inline-block;
+    width: 180px;
+}
+
+.checkout .ana-form .kredi-karti-formu .ccv {
+    display: inline-block;
+    width: 110px;
+    float: right;
+}
+
+.checkout .ana-form .kredi-karti-formu .skt .ay {
+    width: 50px;
+    margin-right: 25px;
+}
+
+.checkout .ana-form .kredi-karti-formu .skt .yil {
+    width: 80px;
+}
+
+.checkout .ana-form .kredi-karti-formu .ccv input {
+    width: 110px;
+}
+
+.checkout .odeme-secenekleri .kart-sec {
+    width: 300px;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.checkout .odeme-secenekleri .kart-sec:hover {
+    color: #c65800;
+}
+
+.checkout .odeme-secenekleri .kredi-karti-liste {
+    position: relative;
+}
+
+.checkout .odeme-kart-secenekleri .kart-sil {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    left: 275px;
+}
+
+.checkout .dropdown .dropdown-toggle {
+    border: 1px solid #603813;
+    width: 330px;
+    color: #603813;
+    padding: 10px;
+    line-height: 30px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkout .dropdown .glyphicon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+}
+
+.checkout .dropdown .dropdown-menu {
+    width: 330px;
+    border-radius: 0;
+    padding: 10px;
+    border: 1px solid #603813;
+    height: 250px;
+    overflow: auto;
+}
+
+.checkout .dropdown .dropdown-menu li {
+    line-height: 25px;
+    cursor: pointer;
+    color: #603813;
+}
+
+.checkout .dropdown .dropdown-menu li:hover {
+    color: #c65800;
+}
+
+.checkout .checkout-btn {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.checkout .checkout-btn:hover {
+    background-color: #603813 !important;
+}
+
+.rates-table-modal {
+    width: 800px;
+}
+
+.rates-table-modal .modal-body {
+    padding: 0
+}
+
+.rates-table-modal .modal-footer .btn {
+    padding: 10px 30px;
+}
+
+.rates-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.rates-table-with-bg img {
+    width: 64px;
+}
+
+.rates-table-with-bg {
+    color: #111;
+    background: #f8f8f8;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+}
+
+.rates-table td.axess {
+    background-color: #fcc300;
+    color: #fff;
+}
+
+.rates-table td.maximum {
+    background-color: #fc02ac;
+    color: #fff;
+}
+
+.rates-table td.cardfinans {
+    background-color: #2d5fc2;
+    color: #fff;
+}
+
+.rates-table td.world {
+    background-color: #782b90;
+    color: #fff;
+}
+
+.rates-table td.bonus {
+    background-color: #71bf45;
+    color: #fff;
+}
+
+.rates-table td.paraf {
+    background-color: #00a5d3;
+    color: #fff;
+}
+
+.rates-table td {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.rates-table .amount {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.rates-table td span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.rates-table .total-amount {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.rates-table td {
+    border: 1px dashed #d6d6d6;
+}
+
+.rates-table-with-bg {
+    font-size: 13px!important;
+}
+
+.taksit-sayisi {
+    margin: 40px 0 5px 0;
+    background-color: white;
+}
+
+.taksit-sayisi .dropdown .dropdown-toggle {
+    color: #603813;
+    padding: 10px;
+    line-height: 30px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.taksit-sayisi .dropdown .glyphicon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+}
+
+.taksit-sayisi .dropdown .dropdown-menu {
+    border-radius: 0;
+    padding: 10px;
+    height: 250px;
+    overflow: auto;
+}
+
+.taksit-sayisi .dropdown .dropdown-menu li {
+    line-height: 25px;
+    cursor: pointer;
+    color: #603813;
+}
+
+.taksit-sayisi .dropdown .dropdown-menu li:hover {
+    color: #c65800;
+}
+
+.bolum-yukleniyor {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.bolum-yukleniyor .zeplin {
+    background: url("https://kahhve.com/zeplin/img/yukleniyor.gif") no-repeat center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 250px;
+}
+
+[show-id] {
+    display: none;
+}
+
+.yukleniyor {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    display: none;
+    opacity: 0.7;
+}
+
+.yukleniyor .zeplin {
+    background: url('https://kahhve.com/zeplin/img/yukleniyor.gif') no-repeat center center;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #ccc;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal input, .modal textarea {
+    width: 100%;
+}
+
+.modal .btn {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.icon-info {
+    font-size: 64px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    color: rgba(128, 128, 128, 0.30);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.abonelik .baslik {
+    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+}
+
+.abonelik .process {
+    height: 220px;
+}
+
+.abonelik .process .inner {
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+}
+
+.abonelik .process .aralik-secimi {
+    background-image: url('/zeplin/img/abonelik-takvim.png');
+    background-color: #d88f66;
+}
+
+.abonelik .process .aralik-secimi.kapali {
+    background-color: #cccccc;
+}
+
+.abonelik .process .kahve-secimi {
+    background-color: #cf7933;
+    background-image: url('/zeplin/img/abonelik-kahvecekirdek.png');
+}
+
+.abonelik .process .kahve-secimi.kapali {
+    background-color: #cccccc;
+}
+
+.abonelik .process .odeme-secimi {
+    background-color: #c65800;
+    background-image: url('/zeplin/img/abonelik-kargo.png');
+}
+
+.abonelik .process .odeme-secimi.kapali {
+    background-color: #b3b3b3;
+}
+
+.abonelik .bulutlar {
+    z-index: -1;
+    background-size: 60%;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+}
+
+.abonelik .process .icerik {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.abonelik .btn {
+    min-width: 200px;
+    display: inline-block;
+    margin: 50px;
+}
+
+.abonelik .hikaye {
+    height: 600px;
+    position: relative;
+}
+
+.abonelik .hikaye .yazi {
+    font-size: 18px;
+    padding: 100px 50px;
+    line-height: 30px;
+}
+
+.abonelik .hikaye .yazi p {
+    margin-bottom: 50px;
+}
+
+.abonelik .hikaye .resim {
+    background-image: url('/zeplin/img/abonelik-kahve1.jpg');
+    height: 100%;
+    background-position: right ;
+}
+
+.abonelik .hikaye .bulutlar {
+    opacity: 0.3;
+    background-position: left 30% center;
+    background-size: 40%;
+}
+
+.abonelik .sorular {
+    padding: 50px;
+    font-size: 32px;
+}
+
+.abonelik .sorular h4 {
+    font-size: 32px;
+}
+
+.abonelik .sorular p {
+    font-size: 0.7em;
+    max-width: 800px;
+    margin: auto;
+}
+
+.abonelik .secenekler {
+    font-size: 20px;
+    position: relative;
+}
+
+.abonelik .secenekler .btn {
+    margin-bottom: 10px;
+}
+
+.abonelik .secenekler .bulutlar {
+    background-size: 40%;
+}
+
+.abonelik .btn.fazla {
+    width: 50px;
+}
+
+.abonelik .secenekler .ogutme-secimi .btn {
+    font-size: 18px;
+    width: 180px;
+    margin: 50px 20px;
+}
+
+.abonelik .secenekler .kahve-secimi .btn {
+    font-size: 16px;
+    width: 250px;
+    margin: 10px;
+    letter-spacing: 0.6px;
+}
+
+.abonelik .secenekler .kahve-secimi .kahveler {
+    width: 280px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.abonelik .secenekler .kahve-secimi img {
+    width: 150px;
+}
+
+.modal-body.kahve-secimi .kahveler {
+    width: 180px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.modal-body.kahve-secimi .kahveler img {
+    width: 100px;
+}
+
+.modal-body.kahve-secimi .kahveler a {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 17px;
+    width: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden ;
+}
+
+.abonelik .odeme .uyari {
+    border-top: 3px solid #c65800;
+    border-bottom: 3px solid #c65800;
+}
+
+.abonelik .odeme, .abonelik.ayril {
+    background-image: url("/zeplin/img/bulut.png");
+    background-position: bottom right 50px;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+.abonelik .ozet {
+    margin-bottom: 120px;
+}
+
+.abonelik .ozet .side a {
+    display: block;
+    border: 2px solid #603813;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.abonelik .ozet .btn {
+    margin-top: 20px;
+}
+
+.abonelik .ozet .side a:hover {
+    background-color: #c65800;
+    color: white !important;
+}
+
+.abonelik .ozet .kredi-karti {
+    padding: 10px 30px;
+    border: 1px solid #603813;
+    border-radius: 10px;
+    letter-spacing: 1.2px;
+}
+
+.abonelik .ozet .kredi-karti p {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.abonelik.ayril {
+    max-width: 600px;
+    margin: 150px auto;
+}
+
+.abonelik.ayril .btn {
+    margin: 20px;
+}
+
+.abonelik .kargo-sirketi input:checked+label {
+    font-weight: bold;
+}
+
+.abonelik .kargo-sirketi label {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid #c65800;
+    padding: 40px 0;
+    width: 60%;
+}
+
+#fazlaadet .btn {
+    margin: 18px;
+    width: 150px;
+}
+
+#fazlakahve .btn {
+    margin-bottom: 0;
+    width: 180px;
+    margin: 15px;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+}
+
+#detaykahve .kahve-ilave-detay {
+    padding: 10px 30px;
+    margin: 20px;
+    border: 3px solid #c65800;
+}
+
+#detaykahve .kahve-ilave-detay h4 {
+    font-weight: bold;
+}
+
+#detaykahve .kahve-ilave-detay p {
+    font-size: 24px;
+}
+
+#detaykahve .urun-detay .adet {
+    position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+    section.urun-detay .adet .sepete-ekle {
+        float: right;
+    }
+
+    .uclu .kultur {
+        margin-right: 8px;
+    }
+
+    .urunserit {
+        padding: 10px 0;
+    }
+
+    section.katalog .urunler {
+        border-left: 2px solid #c65800;
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer div {
+        text-align: center;
+    }
+
+    section.katalog {
+        padding: 50px 10px;
+        margin: 0;
+    }
+
+    section.information .img {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, #5f3818 80%), url('https://kahhve.com/zeplin/img/orta.jpg');
+    }
+
+    section.information .img .inner {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px #c65800 dashed;
+        padding-bottom: 30px;
+    }
+
+    section.information .sag-bolum {
+        background-color: #5f3818;
+        height: 500px;
+        padding: 40px 20px;
+    }
+
+    section.information h2 {
+        font-size: 44px;
+    }
+
+    div.ucan-yazi.turuncu span {
+        height: 50px;
+        background-size: auto 100%;
+    }
+
+    div.ucan-yazi.turuncu .baslangic {
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    div.ucan-yazi.turuncu .yazi {
+        font-size: 20px;
+        line-height: 47px;
+        padding: 0 5px;
+    }
+
+    div.ucan-yazi.turuncu .bitis {
+        width: 140px;
+    }
+
+    section.banner .img {
+        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('/zeplin/img/bann.jpg');
+    }
+
+    section.banner .banner1 .img {
+        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('https://kahhve.com/img/banner/banner_15022019.jpg');
+    }
+
+    section.banner .banner2 .img {
+        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('https://kahhve.com/img/banner/banner_02102019.jpg');
+    }
+
+    section.banner .banner3 .img {
+        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('https://kahhve.com/img/banner/banner3.jpg');
+    }
+
+    section.banner .top1 {
+        font-size: 54px;
+        line-height: 54px;
+    }
+
+    section.banner .top2 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    section.banner .top3 {
+        font-size: 18px;
+    }
+
+    section.urun-detay .bilgiler {
+        text-align: center;
+        padding: 20px;
+    }
+
+    section.urun-detay .btn.sticky-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        border-radius: 0;
+        max-width: unset;
+        z-index: 100;
+    }
+
+    section.urun-detay .adet .dropdown {
+        position: relative;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    section.urun-detay .adet .favori-ekle {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    section.urun-detay .adet .sepete-ekle {
+        margin-top: 10px;
+    }
+
+    section.katalog .urunler .urun, .urun {
+        padding: 0;
+        padding-bottom: 15px;
+    }
+
+    .urun i {
+        right: 0;
+    }
+
+    .urun .stokta-yok {
+        bottom: 0;
+    }
+
+    .katalog .baslik.kahveler {
+        background-image: linear-gradient(to bottom, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('/zeplin/img/kahve.jpg');
+    }
+
+    .katalog .baslik.ekipmanlar {
+        background-image: linear-gradient(to bottom, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+    }
+
+    section.urun-detay h1 {
+        font-size: 36px;
+    }
+
+    .urun .title .inner-title {
+        font-size: 16px;
+    }
+
+    .urunserit .urun oldprice {
+        width: 60px;
+        font-size: 0.8em;
+    }
+
+    .urunserit .urun line {
+        width: 60px;
+        top: 10px;
+    }
+
+    .adres-secimi .yeni-adres {
+        display: block;
+    }
+
+    .adres-secimi {
+        text-align: center;
+    }
+
+    div.adres .ana.header {
+        height: 190px;
+    }
+
+    .icon-info {
+        display: none;
+    }
+
+    .uclu .kultur {
+        margin: 8px 0;
+    }
+
+    .login-page .inner-form {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    div.sepet-page img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    div.sepet-page .urun-ismi {
+        text-align: center;
+    }
+
+    div.sepet-page .marka {
+        text-align: center;
+    }
+
+    div.sepet-page .detay {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sepet-urunler .secenek {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .sepet-urunler .adet {
+        position: absolute;
+        bottom: 40px;
+        right: 50px;
+        left: 0;
+        width: auto;
+    }
+
+    div.sepet-page .ea-close {
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+    }
+
+    div.sepet-page .fiyat {
+        text-align: center;
+        width: 100%;
+    }
+
+    div.sepet-page form.toplam {
+        height: 520px;
+    }
+
+    div.sepet-page form.toplam .not {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    div.sepet-page form.toplam .not a {
+        position: relative;
+    }
+
+    div.sepet-page form.toplam .not i {
+        position: absolute;
+        top: -20px;
+    }
+
+    div.sepet-page form.toplam .not .yazi {
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    div.siparis-onay .urun-ismi {
+        font-size: 24px;
+    }
+
+    div.siparis-onay section.sepet-urunler .detay {
+        margin-left: 0;
+        width: 70%;
+    }
+
+    div.siparis-onay img {
+        width: 25%;
+    }
+
+    div.siparis-onay .ucan-yazi {
+        width: 100%;
+    }
+
+    div.siparis-onay .ucan-yazi .baslangic {
+        display: none;
+    }
+
+    div.siparis-onay .ucan-yazi .bitis {
+        display: none;
+    }
+
+    div.siparis-onay .ucan-yazi .yazi {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .katalog .baslik h1 {
+        font-size: 40px;
+    }
+
+    .katalog .baslik h2 {
+        font-size: 30px;
+    }
+
+    .katalog .baslik .back-ekipman {
+        height: 50px;
+        background-size: auto 100%;
+    }
+
+    .katalog .baslik {
+        padding-top: 5px;
+    }
+
+    .adres .odeme .toplam .fiyat {
+        display: block;
+    }
+
+    div.adres .odeme {
+        margin: 0;
+    }
+
+    div.adres .sepet-urunler.ozet .fiyat {
+        position: relative;
+    }
+
+    .sepet-page .kargo-ucreti .ucan-yazi .yazi {
+        font-size: 16px;
+    }
+
+    .sepet-page .kargo-ucreti {
+        text-align: center;
+    }
+
+    .sepet-page .kargo-ucreti .ucan-yazi {
+        float: none !important;
+    }
+
+    .sepet-page .promosyon input[type="text"] {
+        min-width: auto;
+        width: 60%;
+    }
+
+    .sepet-page .toplam div {
+        float: none !important;
+        text-align: center;
+    }
+
+    .sepet-page .toplam .btn {
+        width: 100%;
+        max-width: none;
+    }
+
+    header.navbar .logo img {
+        margin-left: 35px;
+    }
+
+    header.mini .navbar-header .navbar-toggle {
+        top: 7px;
+    }
+
+    header.mini .navbar-header .icon-search {
+        top: 13px;
+    }
+
+    header.mini .navbar-header .icon-profil {
+        top: 13px;
+    }
+
+    header.mini .navbar-header .sepet.icon {
+        top: 8px;
+    }
+
+    .search-form .result li span {
+        font-size: 16px;
+    }
+
+    .search-form .result li a {
+        padding: 0;
+    }
+
+    .search-form .result img {
+        width: 70px;
+    }
+
+    .urun-detay price {
+        display: block;
+    }
+
+    .abonelik .sorular {
+        font-size: 22px;
+    }
+
+    .abonelik .hikaye {
+        height: auto;
+    }
+
+    .abonelik .process .kapali {
+        display: none;
+    }
+
+    .abonelik .secenekler .ogutme-secimi .btn {
+        min-width: 40%;
+        width: 35%;
+        margin: 15px;
+    }
+
+    .abonelik .yeni-adres .form-group {
+        margin: 0;
+    }
+
+    .abonelik .yeni-adres .form-group.adres {
+        margin: 20px 20px 0 20px;
+    }
+
+    .abonelik .yeni-adres .form-group .col-md-6 {
+        margin: 20px 20px 0 20px;
+        padding: 0;
+    }
+
+    .abonelik .yeni-adres .fatura-bilgisi-checkbox {
+        margin: 20px;
+    }
+
+    .abonelik .yeni-adres #fatura-bilgisi {
+        position: absolute;
+        margin-top: 10px;
+    }
+
+    .abonelik .yeni-adres .fatura-bilgisi-checkbox label {
+        margin-left: 20px;
+    }
+
+    .abonelik .odeme #kredikarti {
+        margin: 20px;
+    }
+
+    .abonelik .odeme #cardExpirationMonth {
+        float: left;
+    }
+
+    .abonelik .odeme #cardExpirationYear {
+        float: left;
+    }
+
+    .modal-sepet .butonlar {
+        text-align: center;
+    }
+
+    .modal-sepet .butonlar a {
+        width: 100%;
+    }
+
+    .modal-sepet .butonlar a.back-turuncu {
+        margin-top: 10px;
+    }
+
+    .siparis-yorum .sepet-urun {
+        text-align: center;
+    }
+
+    .siparis-yorum .sepet-urun .detay {
+        position: relative;
+        left: unset;
+    }
+
+    .checkout .sepet-ozet {
+        position: relative;
+        width: 100%;
+    }
+
+    .checkout .ana-form {
+        width: 100%;
+    }
+
+    .checkout .ana-form .bolum-inner {
+        padding: 20px 10px;
+    }
+
+    .checkout-header {
+        margin: 0 -15px;
+    }
+
+    footer li {
+        width: 50%;
+        float: left;
+    }
+
+    footer .social li {
+        width: 20%;
+    }
+
+    footer .beyaz-alan .kredi-kartlari {
+        background-size: 100%;
+        max-width: 500px;
+        height: 40px;
+        margin-top: 30px;
+    }
+
+    .uclu .subscription input[type="submit"] {
+        padding: 0 10px;
+    }
+
+    section.ozelliklerimiz .baslik {
+        position: relative;
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    section.ozelliklerimiz .govde {
+        margin-top: 20px;
+    }
+
+    section.ozelliklerimiz .govde .icon {
+        margin-top: 50px;
+    }
+
+    section.urun-sayfasi-sss {
+        padding: 50px 0;
+    }
+
+    section.urun-sayfasi-sss .panel-collapse {
+        padding: 0 10px 0 30px;
+    }
+}
+
+.buyuk1 {
+    font-size: 1.25em;
+}
+
+.buyuk2 {
+    font-size: 1.5em;
+}
+
+.buyuk3 {
+    font-size: 2em;
+}
+
+.buyuk4 {
+    font-size: 3em;
+}
+
+.kucuk1 {
+    font-size: 0.8em;
+}
+
+.kucuk2 {
+    font-size: 0.5em;
+}
+
+.kucuk3 {
+    font-size: 0.4em;
+}
+
+.voffset1 {
+    margin-top: 10px;
+}
+
+.voffset2 {
+    margin-top: 20px;
+}
+
+.voffset3 {
+    margin-top: 50px;
+}
+
+.voffset4 {
+    margin-top: 100px;
+}
+
+.voffset5 {
+    margin-top: 30px;
+}
+
+/*input inner text*/
+*::-webkit-input-placeholder {
+    color: #603813;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+*:-moz-placeholder {
+    color: #603813;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+*::-moz-placeholder {
+    color: #603813;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+*:-ms-input-placeholder {
+    color: #603813;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.placeholder-beyaz::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.placeholder-beyaz:-moz-placeholder {
+    color: #fff;
+}
+
+.placeholder-beyaz::-moz-placeholder {
+    color: #fff;
+}
+
+.placeholder-beyaz:-ms-input-placeholder {
+    color: #fff;
+}
