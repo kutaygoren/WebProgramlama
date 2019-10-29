@@ -139,8 +139,8 @@ var sepetAc = new Vue({
         toplam: 0.00,
     },
     created(){
-      this.cart = JSON.parse(localStorage.getItem('sepettekiler' || [] ))
-      this.toplam = JSON.parse(localStorage.getItem('toplam' || [] ))
+      this.cart = JSON.parse(localStorage.getItem('sepettekiler' || [] ));
+      this.toplam = JSON.parse(localStorage.getItem('toplam' || [] ));
     },
     methods: {
         mouseOver: function(){
@@ -154,6 +154,18 @@ var sepet1 = new Vue({
   data: {
     cart: sepetAc.cart,
     toplam: sepetAc.toplam,
+  },
+  created() {
+    this.cart = JSON.parse(localStorage.getItem('sepettekiler' || [] ));
+  },
+  methods: {
+    sepettenSil: function(index)
+    {
+      this.toplam -= this.cart[index].fiyat;
+      this.cart.splice(index, 1);
+      localStorage.setItem('sepettekiler', JSON.stringify(this.cart));
+      localStorage.setItem('toplam', JSON.stringify(this.toplam));
+    }
   }
 })
 

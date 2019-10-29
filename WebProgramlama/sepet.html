@@ -144,72 +144,84 @@
       		</section>
       		<div class="seperator"></div>
       		<section class="sepet-urunler">
-      				<div style="margin-top: 30px;">
-      			<div class="sepet-urun">
-      				<a href="/hario-set-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/112_1569671179_VwG.jpg?auto=enhanced&amp;h=250&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=250&amp;s=61add35278d7891cf66f61171c9b0aca"></a>
-      				<div class="detay">
-      					<a href="/hario-set-kahve-demleme-ekipmanlari"><div class="turuncu urun-ismi">V60 TANIŞMA SETI</div></a>
-      					<a href="/hario"><div class="kahve roboto marka">Hario</div></a>
-      					<div style="min-height: 35px; margin-bottom: 40px;">
-      											<div class="dropdown ea-select secenek">
-      						<a data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="Kahvelerimiz çekirdek olarak elimizde bulunmaktadır. Siparişiniz sonrası demleme yapacağınız ekipmana göre öğütme yapılacaktır. Bu yüzden hangi ekipman ile demleme yapacağınızı belirtmeniz gerekmektedir. Eğer öğütmeyi kendiniz yapmayı planlıyorsanız seçenek olarak çekirdek seçmeniz yeterli olacaktır." data-original-title="Öğütme Boyutu Nedir?" tabindex="0" style="top: 4px;position: absolute;font-size: 20px;right: 25px;color: #c25800;">
-      							<span class="glyphicon glyphicon-question-sign"></span>
-      						</a>
-      					  								<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      								<span class="text text-left">Kahve Öğütme Boyutu</span>
-      								<span class="caret"></span>
-      							</button>
-      					    					    <ul class="dropdown-menu" aria-labelledby="adet">
-      					    							    	<li><a href="/sepet/urunsecenek/177966?tip=24">Çekirdek</a></li>
-      						    						    	<li><a href="/sepet/urunsecenek/177966?tip=25">Hario V60</a></li>
-      						    						</ul>
-      						</div>
-      											<div class="dropdown ea-select adet">
-      							<button class="dropdown-toggle" type="button" id="adet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      			<div style="margin-top: 30px;" v-for="(item, index) in cart">
+      			  <div class="sepet-urun">
+      				  <a :href="item.url"><img :src="item.image"></a>
+      				  <div class="detay">
+      					  <a :href="item.url"><div class="turuncu urun-ismi">{{ item.title }}</div></a>
+      					  <a :href="item.markaurl"><div class="kahve roboto marka">{{ item.marka }}</div></a>
+      					  <div style="min-height: 35px; margin-bottom: 40px;">
+      							<div class="dropdown ea-select secenek">
+      						    <a data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="Kahvelerimiz çekirdek olarak elimizde bulunmaktadır. Siparişiniz sonrası demleme yapacağınız ekipmana göre öğütme yapılacaktır. Bu yüzden hangi ekipman ile demleme yapacağınızı belirtmeniz gerekmektedir. Eğer öğütmeyi kendiniz yapmayı planlıyorsanız seçenek olarak çekirdek seçmeniz yeterli olacaktır." data-original-title="Öğütme Boyutu Nedir?" tabindex="0" style="top: 4px;position: absolute;font-size: 20px;right: 25px;color: #c25800;">
+      							    <span class="glyphicon glyphicon-question-sign"></span>
+      						    </a>
+      					  		<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      								  <span class="text text-left">Kahve Öğütme Boyutu</span>
+      						  		<span class="caret"></span>
+      							  </button>
+                      <ul class="dropdown-menu" aria-labelledby="adet">
+	    							    	<li><a>French Press</a></li>
+		    						    	<li><a>Chemex</a></li>
+		    						    	<li><a>Metal Filtre</a></li>
+		    						    	<li><a>Kağıt Filtre</a></li>
+		    						    	<li><a>Hario</a></li>
+		    						    	<li><a>Aeropress</a></li>
+		    						    	<li><a>Moka Pot</a></li>
+		    						    	<li><a>Espresso</a></li>
+		    						    	<li><a>Soğuk Demleme</a></li>
+		    						    	<li><a>Çekirdek</a></li>
+		    						    	<li><a>Syphon</a></li>
+						    			</ul>
+      						  </div>
+      							<div class="dropdown ea-select adet">
+      							  <button class="dropdown-toggle" type="button" id="adet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       								<span class="text text-left">1</span>
       								<span class="caret"></span>
-      							</button>
-      							<ul class="dropdown-menu" aria-labelledby="adet">
-      															<li><a href="/sepet/urunadet/177966?adet=1">1 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=2">2 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=3">3 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=4">4 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=5">5 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=6">6 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=7">7 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=8">8 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=9">9 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=10">10 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=11">11 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=12">12 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=13">13 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=14">14 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=15">15 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=16">16 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=17">17 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=18">18 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=19">19 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=20">20 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=21">21 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=22">22 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=23">23 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=24">24 Adet</a></li>
-      															<li><a href="/sepet/urunadet/177966?adet=25">25 Adet</a></li>
-      														</ul>
-      						</div>
-      						<div class="ea-close roboto light kahve text-center"><a href="/sepet/urunsil/177966">×</a></div>
-      					</div>
-      					<div class="fiyat kahve"><span>229,99</span> TL</div>
-      				</div>
-      			</div>
-      		</div>
-      				</section>
+      							  </button>
+      							  <ul class="dropdown-menu" aria-labelledby="adet">
+														<li><a>1 Adet</a></li>
+														<li><a>2 Adet</a></li>
+														<li><a>3 Adet</a></li>
+														<li><a>4 Adet</a></li>
+														<li><a>5 Adet</a></li>
+														<li><a>6 Adet</a></li>
+														<li><a>7 Adet</a></li>
+														<li><a>8 Adet</a></li>
+														<li><a>9 Adet</a></li>
+														<li><a>10 Adet</a></li>
+														<li><a>11 Adet</a></li>
+														<li><a>12 Adet</a></li>
+														<li><a>13 Adet</a></li>
+														<li><a>14 Adet</a></li>
+														<li><a>15 Adet</a></li>
+														<li><a>16 Adet</a></li>
+														<li><a>17 Adet</a></li>
+														<li><a>18 Adet</a></li>
+														<li><a>19 Adet</a></li>
+														<li><a>20 Adet</a></li>
+														<li><a>21 Adet</a></li>
+														<li><a>22 Adet</a></li>
+														<li><a>23 Adet</a></li>
+														<li><a>24 Adet</a></li>
+														<li><a>25 Adet</a></li>
+      									</ul>
+      						  </div>
+      						<div class="ea-close roboto light kahve text-center"><a v-on:click="sepettenSil(index)" href="#">×</a></div>
+      					  </div>
+      					<div class="fiyat kahve"><span>{{ item.fiyat }}</span> TL</div>
+      				  </div>
+      			  </div>
+      		  </div>
+      		</section>
       		<div class="seperator"></div>
       		<div class="kargo-ucreti">
       			<div class="turuncu ucret">
       				<span class="roboto">Kargo Ücreti:</span>
-      									<span class="kahve">ÜCRETSİZ</span>
-      							</div>
+      									<span v-if="toplam > 100" class="kahve">ÜCRETSİZ</span>
+                        <span v-else class="fiyat kahve" style="padding-left: 10px;position: relative;">
+						              <span>5.99</span> TL
+					              </span>
+      			</div>
       			<div class="ucan-yazi pull-right"><span class="baslangic"></span><span class="yazi kahve">100 TL ÜZERİNE KARGO BİZDEN!</span><span class="bitis"></span></div>
       		</div>
       		<div class="seperator"></div>
@@ -230,7 +242,7 @@
       							</div>
       			<div class="pull-left">
       				<div class="toplam-yazi turuncu">TOPLAM</div>
-      				<div class="toplam-fiyat kahve"><span>229.99</span> TL</div>
+      				<div class="toplam-fiyat kahve"><span>{{ toplam }}</span> TL</div>
       			</div>
       			<div class="pull-right">
       				<button type="submit" class="btn">SİPARİŞ VER</button>
