@@ -3,29 +3,30 @@
 <html lang="tr">
 
     <head>
-        <script src="node_modules\vue\dist\vue.js" charset="utf-8"></script>
-        <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="src\favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="src\favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="src\favicon-96x96.png" sizes="96x96">
+      <script src="node_modules\vue\dist\vue.js" charset="utf-8"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="icon" type="image/png" href="src\favicon-16x16.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="src\favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="src\favicon-96x96.png" sizes="96x96">
 
 
-        <title>Kahve, Kahve Çeşitleri, Kahve Demleme Ekipmanları | KahhveCom</title>
+      <title>Kahve, Kahve Çeşitleri, Kahve Demleme Ekipmanları | KahhveCom</title>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- bootstrap -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <!-- font yüklemek için -->
-        <script>
-         WebFont.load({
-            google: {
-              families: ['Jaldi:400,700', 'Roboto:300,400,700']
-            }
-          });
-        </script>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="src\css\styles.css" />
-        <link rel="stylesheet" type="text/css" href="src\fonts\kahhve-fonts.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <!-- font yüklemek için -->
+      <script>
+       WebFont.load({
+          google: {
+            families: ['Jaldi:400,700', 'Roboto:300,400,700']
+          }
+        });
+      </script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="src\css\styles.css" />
+      <link rel="stylesheet" type="text/css" href="src\fonts\kahhve-fonts.css" />
     </head>
 
     <body>
@@ -33,21 +34,14 @@
         <header class="navbar navbar-default">
 
             <div class="container">
-                <button type="button" class="navbar-toggle collapsed visible-md visible-sm visible-xs">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar back-turuncu"></span>
-                    <span class="icon-bar back-turuncu"></span>
-                    <span class="icon-bar back-turuncu"></span>
-                </button>
-
-                <div class="navbar-header">
+               <div class="navbar-header">
                     <a class="logo" href="index.html"><img src="src\img\logo_mini.png" alt="KahhveCom"/></a>
                     <a class="turuncu icon-search visible-sm visible-xs visible-md" style="right: 170px;"></a>
                     <a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu visible-sm visible-xs visible-md favori-icon" style="position: absolute;right: 105px;top: 10px;font-size: 40px;padding: 12px 15px 0 0;-webkit-text-stroke: 2.5px white;"></a>
                     <a class="turuncu icon-profil visible-sm visible-xs visible-md profil-toggle" href="#"></a>
                     <span class="sepet icon visible-sm visible-xs visible-md">
                         <i class="icon kahve icon-sepet"></i>
-                        <a href="/sepet" class="turuncu sepete"></a>
+                        <a href="sepet.html" class="turuncu sepete"></a>
                     </span>
                 </div>
 
@@ -70,26 +64,28 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/login">GİRİŞ</a></li>
+                        <li><a href="login.html">GİRİŞ</a></li>
                         <li class="dropdown" id="searchYap">
                             <a href="#" class="search icon-search turuncu dropdown-toggle" data-toggle="dropdown" role="button"></a>
                             <input v-model="aranacakKelime" type="text" class="form-control arama-kelimesi dropdown-menu" name="kelime" placeholder="Arama" autocomplete="off" v-on:keydown="aramaYap">
-                        </li> <!-- dropdown search bar eklenecek / input "/konum" olarak atanacak-->
+                        </li>
                         <li><a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu favori-icon" style="font-size: 32px;padding: 12px 15px 0 0;-webkit-text-stroke: 1.5px white;"></a></li>
                         <li class="header-sepet sepet text-left roboto" id="sepetAc">
                             <i @mouseover="mouseOver" class="icon kahve icon-sepet"></i>
-                            <a href="/sepet" class="turuncu sepete"></a>
+                            <a href="sepet.html" class="turuncu sepete"></a>
                             <template v-if="active">
                                 <div class="pencere roboto" style="display: block;">
                                 <ul class="list-unstyled kahve text-left">
+                                  <!-- ürünler buraya girilecek -->
+                                  <li v-for="alinacaklar in cart"><a :href="alinacaklar.url">{{alinacaklar.sepette}}</a><span class="pull-right">{{alinacaklar.fiyat}} TL</span></li>
                                 </ul>
                                 <div class="seperator"></div>
                                 <div class="voffset2 kahve">
                                     <strong>Toplam</strong>
-                                    <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
+                                    <strong class="pull-right toplam buyuk2 turuncu">{{toplam}} TL</strong>
                                 </div>
                                     <div class="voffset5 text-right beyaz">
-                                        <a class="btn" href="/sepet">SEPETE GİT</a>
+                                        <a class="btn" href="sepet.html">SEPETE GİT</a>
                                         <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
                                     </div>
                                 </div>
@@ -104,7 +100,7 @@
                                     <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
                                 </div>
                                     <div class="voffset5 text-right beyaz">
-                                        <a class="btn" href="/sepet">SEPETE GİT</a>
+                                        <a class="btn" href="sepet.html">SEPETE GİT</a>
                                         <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
                                     </div>
                                 </div>
@@ -166,81 +162,28 @@
 	</div>
 </section>
 
-<section class="urunserit tanisma container">
+<section class="urunserit tanisma container" id="tanismaSetleri">
 	<div class="row">
 		<h2 class="text-center turuncu">POPÜLER TANIŞMA SETLERİ</h2>
 
-		<div class="col-md-3 col-xs-6">
+		<div class="col-md-3 col-xs-6" v-for="(item, index) in setler">
 			<div class="urun">
-	                <a href="/aeropress-aeropress-tanisma-seti-kahve-tanisma-setleri" class="resim">
-				    <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="aeropress-aeropress-tanisma-seti-kahve-tanisma-setleri"></i>
-				    <img class="beklemede" src="src\img\789_1569671404_ASZ.jpg" alt="Aeropress Aeropress Tanışma Seti">
-	                </a>
-	                <a href="/aeropress-aeropress-tanisma-seti-kahve-tanisma-setleri">
+	          <a class="resim"> <!-- TODO: bug düzelt-->
+				    <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" v-on:click="sepeteEkle(index)"></i>
+				    <img class="beklemede" :src="item.image">
+	          </a>
+	          <a :href="item.url">
 		        <div class="title text-center">
-			        <span class="inner-title">AEROPRESS TANIŞMA SETI</span>
+			        <span class="inner-title">{{ item.title }}</span>
 		        </div>
 	                </a>
-	                   <a href="/aeropress"><div class="text-center marka roboto">AEROPRESS</div></a>
+	                   <a :href="item.markaurl"><div class="text-center marka roboto">{{ item.marka }}</div></a>
 	                      <div class="text-center fiyat">
-				            <price>329.99 TL</price>
+				            <p>{{ item.fiyat }} TL</p>
 	                      </div>
             </div>
         </div>
-
-		<div class="col-md-3 col-xs-6">
-			<div class="urun">
-	                <a href="/kahhvecom-tanisma-seti-kahveler" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="kahhvecom-tanisma-seti-kahveler"></i>
-				    <img class="beklemede" src="src\img\92_1569671134_BG8.jpg" alt="KahhveCom Kahhve Tanışma Seti">
-	                </a>
-	                <a href="/kahhvecom-tanisma-seti-kahveler">
-		        <div class="title text-center">
-			        <span class="inner-title">KAHHVE TANIŞMA SETI</span>
-		        </div>
-	                </a>
-	                   <a href="/kahhvecom"><div class="text-center marka roboto">KAHHVECOM</div></a>
-	                      <div class="text-center fiyat">
-				            <price>49.99 TL</price>
-	                       </div>
-            </div>
-		</div>
-
-		    <div class="col-md-3 col-xs-6">
-			    <div class="urun">
-	                <a href="/hario-set-kahve-demleme-ekipmanlari" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="hario-set-kahve-demleme-ekipmanlari"></i>
-				    <img class="beklemede" src="src\img\112_1569671179_VwG.jpg" alt="Hario V60 Tanışma Seti">
-	                </a>
-	                <a href="/hario-set-kahve-demleme-ekipmanlari">
-		            <div class="title text-center">
-			            <span class="inner-title">V60 TANIŞMA SETI</span>
-		            </div>
-	                </a>
-	                   <a href="/hario"><div class="text-center marka roboto">HARIO</div></a>
-	                      <div class="text-center fiyat">
-				            <price>229.99 TL</price>
-	                       </div>
-                </div>
-		    </div>
-
-		    <div class="col-md-3 col-xs-6">
-			    <div class="urun">
-	                <a href="/bialetti-moka-pot-baslangic-seti-kahve-demleme-ekipmanlari" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="bialetti-moka-pot-baslangic-seti-kahve-demleme-ekipmanlari"></i>
-				    <img class="beklemede" src="src\img\135_1569671319_5Up.jpg" alt="Bialetti Moka Pot Tanışma Seti 3 CUP">
-	                </a>
-	                <a href="/bialetti-moka-pot-baslangic-seti-kahve-demleme-ekipmanlari">
-		            <div class="title text-center">
-			            <span class="inner-title">MOKA POT TANIŞMA SETI 3 CUP</span>
-		            </div>
-	                </a>
-	                   <a href="/bialetti"><div class="text-center marka roboto">BIALETTI</div></a>
-	                      <div class="text-center fiyat">
-				            <price>219.99 TL</price>
-	                       </div>
-                    </div>
-		    </div>
+		  </div>
 	</div>
 	<a href="/kahve-tanisma-setleri" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
 </section>
@@ -276,161 +219,52 @@
 	</div>
 </section>
 
-<section class="urunserit kahveler container">
+<section class="urunserit kahveler container" id="populerKahveler">
 	<div class="row">
 		<h2 class="text-center turuncu">POPÜLER KAHHVELER</h2>
-		<div class="col-md-3 col-xs-6">
+		<div class="col-md-3 col-xs-6" v-for="(item, index) in popKahveler">
 			<div class="urun">
-	            <a href="/caffe-fresco-all-day-blend-kahveler" class="resim">
-		        <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="caffe-fresco-all-day-blend-kahveler"></i>
-				<img class="beklemede" src="src\img\796_1550056308_k43.jpg" alt="Caffe Fresco All Day Blend">
-	            </a>
-	            <a href="/caffe-fresco-all-day-blend-kahveler">
-		            <div class="title text-center">
-			            <span class="inner-title">ALL DAY BLEND</span>
-		            </div>
-	            </a>
-	            <a href="/caffe-fresco"><div class="text-center marka roboto">CAFFE FRESCO</div></a>
-	            <div class="text-center fiyat">
-				    <oldprice class="gray">25.99 TL<line></line></oldprice>
-				     <price>21.99 TL</price>
-	            </div>
-            </div>
+	        <a class="resim">
+		      <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" v-on:click="sepeteEkle(index)"></i>
+				  <img class="beklemede" :src="item.image">
+	        </a>
+	        <a :href="item.url">
+		      <div class="title text-center">
+			      <span class="inner-title">{{ item.title }}</span>
+		      </div>
+	        </a>
+	        <a :href="item.markaurl"><div class="text-center marka roboto">{{ item.marka }}</div></a>
+	        <div class="text-center fiyat">
+				  <p>{{ item.fiyat }} TL</p>
+	        </div>
+      </div>
 		</div>
-
-		<div class="col-md-3 col-xs-6">
-			<div class="urun">
-	            <a href="/coffee-sapiens-evolution-blend-kahveler" class="resim">
-				<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="coffee-sapiens-evolution-blend-kahveler"></i>
-				<img class="beklemede" src="src\img\55_1521108632_Txj.jpg" alt="Coffee Sapiens Evolution Blend">
-	            </a>
-	            <a href="/coffee-sapiens-evolution-blend-kahveler">
-		            <div class="title text-center">
-			            <span class="inner-title">EVOLUTION BLEND</span>
-		            </div>
-	            </a>
-	            <a href="/coffee-sapiens"><div class="text-center marka roboto">COFFEE SAPIENS</div></a>
-	            <div class="text-center fiyat">
-				    <price>39.99 TL</price>
-	            </div>
-            </div>
-		</div>
-
-		<div class="col-md-3 col-xs-6">
-			<div class="urun">
-	            <a href="/cool-beans-costa-rica-kahveler" class="resim">
-				<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="cool-beans-costa-rica-kahveler"></i>
-				<img class="beklemede" src="src\img\67_1444945568_pN1.jpg" alt="Cool Beans Costa Rica">
-	            </a>
-	            <a href="/cool-beans-costa-rica-kahveler">
-		        <div class="title text-center">
-			        <span class="inner-title">COSTA RICA</span>
-		        </div>
-	            </a>
-	            <a href="/cool-beans"><div class="text-center marka roboto">COOL BEANS</div></a>
-	            <div class="text-center fiyat">
-				    <price>44.99 TL</price>
-	            </div>
-            </div>
-        </div>
-
-		<div class="col-md-3 col-xs-6">
-			<div class="urun">
-	            <a href="/urban-grind-guatemala-santa-barbara-kahveler" class="resim">
-				<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="urban-grind-guatemala-santa-barbara-kahveler"></i>
-				<img class="beklemede" src="src\img\668_1550484839_u9J.jpg" alt="Urban Grind Guatemala Santa Barbara">
-	            </a>
-	            <a href="/urban-grind-guatemala-santa-barbara-kahveler">
-		        <div class="title text-center">
-			        <span class="inner-title">GUATEMALA SANTA BARBARA</span>
-		        </div>
-	            </a>
-	            <a href="/urban-grind"><div class="text-center marka roboto">URBAN GRIND</div></a>
-	            <div class="text-center fiyat">
-				    <price>49.99 TL</price>
-	            </div>
-            </div>
-        </div>
 	</div>
 	<a href="/kahveler" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
 </section>
 
 <div class="back-gray">
-	<section class="urunserit container">
+	<section class="urunserit container" id="populerEkipmanlar">
 		<div class="row">
 			<h2 class="text-center">POPÜLER EKİPMAN & AKSESUARLAR</h2>
-			<div class="col-md-3 col-xs-6">
+			<div class="col-md-3 col-xs-6" v-for="(item, index) in popEkipmanlar">
 				<div class="urun">
-	                <a href="/hario-kettle-buono-10-lt-kahve-demleme-ekipmanlari" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="hario-kettle-buono-10-lt-kahve-demleme-ekipmanlari"></i>
-				    <img class="beklemede" src="src\img\361_1469013202_cZg.jpg" alt="Hario Kettle Buono 1.0 Lt">
-	                </a>
-	                <a href="/hario-kettle-buono-10-lt-kahve-demleme-ekipmanlari">
-		            <div class="title text-center">
-			            <span class="inner-title">KETTLE BUONO 1.0 LT</span>
-		            </div>
-	                </a>
-	                <a href="/hario"><div class="text-center marka roboto">HARIO</div></a>
-	                <div class="text-center fiyat">
-				        <price>279.99 TL</price>
-	                </div>
-                </div>
-            </div>
-
-			<div class="col-md-3 col-xs-6">
-				<div class="urun">
-	                <a href="/hario-mizudashi-soguk-demleme-kahve-demleme-ekipmanlari" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="hario-mizudashi-soguk-demleme-kahve-demleme-ekipmanlari"></i>
-				    <img class="beklemede" src="src\img\198_1444597118_LnY.jpg" alt="Hario Mizudashi Soğuk Demleme">
-	                </a>
-	                <a href="/hario-mizudashi-soguk-demleme-kahve-demleme-ekipmanlari">
-		            <div class="title text-center">
-			            <span class="inner-title">MIZUDASHI SOĞUK DEMLEME</span>
-		            </div>
-	                </a>
-	                <a href="/hario"><div class="text-center marka roboto">HARIO</div></a>
-	                <div class="text-center fiyat">
-				        <price>139.99 TL</price>
-	                </div>
-                </div>
-            </div>
-
-		    <div class="col-md-3 col-xs-6">
-				<div class="urun">
-	                <a href="/bialetti-moka-pot-express-kirmizi-1-cup-moka-pot" class="resim">
-					<i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" id="bialetti-moka-pot-express-kirmizi-1-cup-moka-pot"></i>
-				    <img class="beklemede" src="src\img\751_1561111234_Gug.jpg" alt="Bialetti Moka Pot Express Kırmızı 1 Cup">
-	                </a>
-	                <a href="/bialetti-moka-pot-express-kirmizi-1-cup-moka-pot">
-		            <div class="title text-center">
-			            <span class="inner-title">MOKA POT EXPRESS KIRMIZI 1 CUP</span>
-		            </div>
-	                </a>
-	                <a href="/bialetti"><div class="text-center marka roboto">BIALETTI</div></a>
-	                <div class="text-center fiyat">
-				        <price>149.99 TL</price>
-	                </div>
-                </div>
-            </div>
-
-			<div class="col-md-3 col-xs-6">
-				<div class="urun">
-	                <a href="/hario-mini-mill-plus-skerton-ogutucu-kahve-degirmenleri" class="resim">
-					<span class="stokta-yok back-turuncu beyaz">STOKTA YOK</span>
-				    <img class="beklemede" src="src\img\757_1543556047_ZS1.jpg" alt="Hario Mini Mill Plus Skerton Öğütücü">
-	                </a>
-	                <a href="/hario-mini-mill-plus-skerton-ogutucu-kahve-degirmenleri">
-		            <div class="title text-center">
-			            <span class="inner-title">MINI MILL PLUS SKERTON ÖĞÜTÜCÜ</span>
-		            </div>
-	                </a>
-	                <a href="/hario"><div class="text-center marka roboto">HARIO</div></a>
-	                <div class="text-center fiyat">
-				        <price>229.99 TL</price>
-	                </div>
-                </div>
-            </div>
-	    </div>
+	          <a class="resim">
+					    <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" v-on:click="sepeteEkle(index)"></i>
+				      <img class="beklemede" :src="item.image">
+	          </a>
+	          <a :href="item.url">
+		          <div class="title text-center">
+			          <span class="inner-title">{{ item.title }}</span>
+		          </div>
+	          </a>
+	          <a href="/hario"><div class="text-center marka roboto">{{ item.marka }}</div></a>
+	          <div class="text-center fiyat">
+				    <p>{{ item.fiyat }} TL</p>
+	          </div>
+        </div>
+      </div>
+	  </div>
 		<a href="/kahve-demleme-ekipmanlari" class="btn text-center">TÜMÜNÜ GÖR</a>
 	</section>
 </div>
@@ -579,15 +413,15 @@
 			<span class="turuncu">5A GRUP MAĞAZACILIK BİLİŞİM <br>TEKNOLOJİ VE DANIŞMANLIK A.Ş.</span>
 			<br>
 			Evren Sitesi E Blok İçerenköy / Ataşehir / İstanbul
-			<br>
+      <br>
 			<span class="turuncu">info@kahhve.com</span> 0 850 522 04 94
 			<h3 class="turuncu">BİZİ TAKİP EDİN</h3>
-            <ul class="social row">
-                <li><a href="https://www.facebook.com/kahhvecom" target="_blank" rel="nofollow" class="facebook"></a></li>
-				<li><a href="https://twitter.com/kahhvecom" target="_blank" rel="nofollow" class="twitter"></a></li>
-				<li><a href="https://www.instagram.com/kahhvecom/" target="_blank" rel="nofollow" class="instagram"></a></li>
-				<li><a href="https://www.youtube.com/user/kahhve" target="_blank" rel="nofollow" class="youtube"></a></li>
-				<li><a href="https://pinterest.com/kahhvecom/" target="_blank" rel="nofollow" class="pinterest"></a></li>
+        <ul class="social row">
+          <li><a href="https://www.facebook.com/kahhvecom" target="_blank" rel="nofollow" class="facebook"></a></li>
+  				<li><a href="https://twitter.com/kahhvecom" target="_blank" rel="nofollow" class="twitter"></a></li>
+  				<li><a href="https://www.instagram.com/kahhvecom/" target="_blank" rel="nofollow" class="instagram"></a></li>
+  				<li><a href="https://www.youtube.com/user/kahhve" target="_blank" rel="nofollow" class="youtube"></a></li>
+  				<li><a href="https://pinterest.com/kahhvecom/" target="_blank" rel="nofollow" class="pinterest"></a></li>
 			</ul>
 		</div>
 	</div>

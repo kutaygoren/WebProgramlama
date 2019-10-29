@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+  <head>
+    <script src="node_modules\vue\dist\vue.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="src\favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src\favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="src\favicon-96x96.png" sizes="96x96">
+
+
+    <title>Kahve, Kahve Çeşitleri, Kahve Demleme Ekipmanları | KahhveCom</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <!-- font yüklemek için -->
+    <script>
+     WebFont.load({
+        google: {
+          families: ['Jaldi:400,700', 'Roboto:300,400,700']
+        }
+      });
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="src\css\styles.css" />
+    <link rel="stylesheet" type="text/css" href="src\fonts\kahhve-fonts.css" />
+  </head>
+
+  <body>
+
+    <header class="navbar navbar-default">
+
+        <div class="container">
+           <div class="navbar-header">
+                <a class="logo" href="index.html"><img src="src\img\logo_mini.png" alt="KahhveCom"/></a>
+                <a class="turuncu icon-search visible-sm visible-xs visible-md" style="right: 170px;"></a>
+                <a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu visible-sm visible-xs visible-md favori-icon" style="position: absolute;right: 105px;top: 10px;font-size: 40px;padding: 12px 15px 0 0;-webkit-text-stroke: 2.5px white;"></a>
+                <a class="turuncu icon-profil visible-sm visible-xs visible-md profil-toggle" href="#"></a>
+                <span class="sepet icon visible-sm visible-xs visible-md">
+                    <i class="icon kahve icon-sepet"></i>
+                    <a href="sepet.html" class="turuncu sepete"></a>
+                </span>
+            </div>
+
+            <div class="hidden-sm hidden-xs hidden-md navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav basliklar">
+                    <li><a href="/kahveler">KAHHVELER</a></li>
+                    <li><a href="/kahve-demleme-ekipmanlari">EKİPMAN & AKSESUARLAR</a></li>
+                    <li><a href="/kahve-tanisma-setleri">TANIŞMA SETLERİ</a></li>
+                    <li class="dropdown" id="markalar-1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MARKALAR <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="kahveler">
+                            <markalar-item class="col-md-6"
+                                v-for="marka in markalar"
+                                v-bind:marka="marka"
+                            ></markalar-item>
+                        </ul>
+                    </li>
+                    <li><a href="/blog" class="turuncu"><strong>KÜLTÜR</strong></a></li>
+                    <li><a href="/sevgililer-gunu-ozel">HEDİYELİKLER</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.html">GİRİŞ</a></li>
+                    <li class="dropdown" id="searchYap">
+                        <a href="#" class="search icon-search turuncu dropdown-toggle" data-toggle="dropdown" role="button"></a>
+                        <input v-model="aranacakKelime" type="text" class="form-control arama-kelimesi dropdown-menu" name="kelime" placeholder="Arama" autocomplete="off" v-on:keydown="aramaYap">
+                    </li>
+                    <li><a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu favori-icon" style="font-size: 32px;padding: 12px 15px 0 0;-webkit-text-stroke: 1.5px white;"></a></li>
+                    <li class="header-sepet sepet text-left roboto" id="sepetAc">
+                        <i @mouseover="mouseOver" class="icon kahve icon-sepet"></i>
+                        <a href="/sepet" class="turuncu sepete"></a>
+                        <template v-if="active">
+                            <div class="pencere roboto" style="display: block;">
+                            <ul class="list-unstyled kahve text-left">
+                              <!-- ürünler buraya girilecek -->
+                              <li v-for="alinacaklar in cart"><a :href="alinacaklar.url">{{alinacaklar.sepette}}</a><span class="pull-right">{{alinacaklar.fiyat}} TL</span></li>
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">{{toplam}} TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="pencere roboto" style="display: none;">
+                            <ul class="list-unstyled kahve text-left">
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+
+    <div class="back-gray login-page bulutlar">
+
+    	<form class="container" id="giris" name="girisFormu">
+    		<section class="header text-center">
+    			<div class="kahve adres-secimi">
+    				<div class="ucan-yazi">
+    					<span class="baslangic"></span>
+    					<span class="yazi kahve">KAHHVE.COM GİRİŞ</span>
+    					<span class="bitis"></span>
+    				</div>
+    			</div>
+    		</section>
+    		<div class="seperator"></div>
+    		<section class="inner-form">
+    			<div class="voffset2">
+    				<input v-model="mailAdresi" type="text" class="base-input" id="mail" placeholder="Mail Adresiniz">
+    			</div>
+    			<div class="voffset2">
+    				<input v-model="sifreAl" type="password" class="base-input" id="sifre" placeholder="Şifreniz">
+    			</div>
+    			<div class="turuncu">
+    				<a href="/login/yenikullanici">Yeni Kullanıcı</a>
+    				<a href="/login/yenisifre" class="pull-right">Şifremi Unuttum</a>
+    			</div>
+    		</section>
+    		<div class="seperator"></div>
+    		<div class="voffset2">
+    			<input v-on:click="girisYap" type="submit" class="btn back-turuncu" value="GİRİŞ YAP">
+    			<a href="/login/fblogin" class="btn fb voffset2">FACEBOOK'LA GİRİŞ</a>
+    		</div>
+    	</form>
+    </div>
+
+    <div class="yukleniyor">
+      <div class="zeplin"></div>
+      </div>
+    </div>
+
+    <section class="container-fluid kupa-sayisi">
+    	<div class="roboto light govde">
+    		<div class="kucuk2" style="margin-bottom: 30px;">Sayısız kahvesever tarafından tercih edildi</div>
+    		<span class="buyuk2">1,682,738</span>
+    		<div style="font-size: 0.4em;">kupa kahve içildi.</div>
+    	</div>
+    </section>
+
+    <section class="ozelliklerimiz">
+    	<div class="ust-resim">
+    		<div class="baslik">
+    			<div class="turuncu inner">KAHVENİN GÜVENİLİR ADRESİ</div>
+    		</div>
+    		<img class="hidden-xs beklemede" src="src\img\layout\kahhve-ozellik.jpg">
+    	</div>
+    	 <div class="govde">
+    		<div class="container text-center">
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\kargo.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">AYNI GÜN KARGOLAMA</h4>
+    				<p>16.00'a kadar gelen siparişler aynı gün kargoda</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\iade.svg" class="box-shadow beklemede"></div>
+    				<h4 class="turuncu voffset2">ÜCRETSİZ İADE</h4>
+    				<p>Memnun kalmadığınız ürünü hiçbir masraf ödemeden iade imkanı</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\guvenlik.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">GÜVENLİ ÖDEME</h4>
+    				<p>256-bit SSL Encrypted Ödeme Sistemi ile tek tıkla sipariş</p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="row uclu voffset3">
+    	<a href="/blog" class="col-md-4 col-sm-12 bolum orta">
+    		<div class="kultur">
+    			<h3>BLOG</h3>
+    			<p>Kahhveyle ilgili haberler,<br>bilgiler, teknikler, gelişmeler...</p>
+    		</div>
+    	</a>
+    	<div class="col-md-8 col-sm-12 bolum subscription-outer">
+    		<div class="subscription">
+    			<h3>İLK SİZ HABERDAR OLUN</h3><p class="roboto kucuk1">Kahveyi o kadar seviyoruz ki, her geçen gün yepyeni bir kahveyi ve ekipmanı ürün ailemize ekliyor, kahveyle ilgili güncel gelişmeleri keyifle araştırıyoruz. Sizi de haberdar etmemizi isterseniz e-bültenimize üye olabilirsiniz.</p>
+    			<form class="mail-bulten" id="e-mail">
+    				<input type="email" placeholder="mail adresini girin" class="mail">
+    				<input v-on:click="mailAlert" type="submit" value="ÜYE OL" class="back-turuncu">
+    			</form>
+    		</div>
+    	</div>
+    </section>
+
+    <footer class="urunserit back-gray">
+    	<div class="container" style="padding-bottom: 20px;">
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="bilgiler-1">
+    			<h3 class="turuncu">KAHHVE.COM</h3>
+    			<ul>
+                    <bilgiler-item
+                        v-for="bilgi in bilgiler"
+                        v-bind:bilgi="bilgi"
+                    ></bilgiler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="kategoriler-1">
+    			<h3 class="turuncu">KATEGORİLER</h3>
+    			<ul class="row">
+                    <kategoriler-item
+                        v-for="kategori in kategoriler"
+                        v-bind:kategori="kategori"
+                    ></kategoriler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" id="markalar-2">
+    			<h3 class="turuncu">MARKALAR</h3>
+    			<ul>
+                    <markalar-item class="col-xs-6 no-padding"
+                        v-for="marka in markalar"
+                        v-bind:marka="marka"
+                    ></markalar-item>
+                </ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" >
+    			<h3 class="turuncu">İLETİŞİM</h3>
+    			<span class="turuncu">5A GRUP MAĞAZACILIK BİLİŞİM <br>TEKNOLOJİ VE DANIŞMANLIK A.Ş.</span>
+    			<br>
+    			Evren Sitesi E Blok İçerenköy / Ataşehir / İstanbul
+          <br>
+    			<span class="turuncu">info@kahhve.com</span> 0 850 522 04 94
+    			<h3 class="turuncu">BİZİ TAKİP EDİN</h3>
+            <ul class="social row">
+              <li><a href="https://www.facebook.com/kahhvecom" target="_blank" rel="nofollow" class="facebook"></a></li>
+      				<li><a href="https://twitter.com/kahhvecom" target="_blank" rel="nofollow" class="twitter"></a></li>
+      				<li><a href="https://www.instagram.com/kahhvecom/" target="_blank" rel="nofollow" class="instagram"></a></li>
+      				<li><a href="https://www.youtube.com/user/kahhve" target="_blank" rel="nofollow" class="youtube"></a></li>
+      				<li><a href="https://pinterest.com/kahhvecom/" target="_blank" rel="nofollow" class="pinterest"></a></li>
+    			</ul>
+    		</div>
+    	</div>
+
+    	<div class="container-fluid gray beyaz-alan">
+    		<div class="col-md-3 guvenli-alisveris">
+    			<div>İnternette Güvenli Alışveriş</div>
+    			<span class="comodo"></span>
+    		</div>
+    		<div class="col-md-6 kredi-kartlari"></div>
+    		<div class="footer-copyright text-center col-md-3">
+    			<div>© 2014 - 2019 kahhve.com Tüm hakları saklıdır.</div>
+    			<div>Çağrı Merkezi: 0 (850) 522 04 94 <span>-</span> info@kahhve.com</div>
+    		</div>
+    	</div>
+    </footer>
+  </body>
+  <script src="index.js" charset="utf-8"></script>
+
+</html>
