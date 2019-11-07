@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+  <head>
+    <script src="node_modules\vue\dist\vue.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="src\favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src\favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="src\favicon-96x96.png" sizes="96x96">
+
+
+    <title>Kahve, Kahve Çeşitleri, Kahve Demleme Ekipmanları | KahhveCom</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <!-- font yüklemek için -->
+    <script>
+     WebFont.load({
+        google: {
+          families: ['Jaldi:400,700', 'Roboto:300,400,700']
+        }
+      });
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="src\css\styles.css" />
+    <link rel="stylesheet" type="text/css" href="src\fonts\kahhve-fonts.css" />
+  </head>
+
+  <body>
+
+    <header class="navbar navbar-default">
+
+        <div class="container">
+           <div class="navbar-header">
+                <a class="logo" href="index.html"><img src="src\img\logo_mini.png" alt="KahhveCom"/></a>
+                <a class="turuncu icon-search visible-sm visible-xs visible-md" style="right: 170px;"></a>
+                <a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu visible-sm visible-xs visible-md favori-icon" style="position: absolute;right: 105px;top: 10px;font-size: 40px;padding: 12px 15px 0 0;-webkit-text-stroke: 2.5px white;"></a>
+                <a class="turuncu icon-profil visible-sm visible-xs visible-md profil-toggle" href="#"></a>
+                <span class="sepet icon visible-sm visible-xs visible-md">
+                    <i class="icon kahve icon-sepet"></i>
+                    <a href="sepet.html" class="turuncu sepete"></a>
+                </span>
+            </div>
+
+            <div class="hidden-sm hidden-xs hidden-md navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav basliklar">
+                    <li><a href="kahveler.html">KAHHVELER</a></li>
+                    <li><a href="kahve-demleme-ekipmanlari.html">EKİPMAN & AKSESUARLAR</a></li>
+                    <li><a href="kahve-tanisma-setleri.html">TANIŞMA SETLERİ</a></li>
+                    <li class="dropdown" id="markalar-1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MARKALAR <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="kahveler">
+                            <markalar-item class="col-md-6"
+                                v-for="marka in markalar"
+                                v-bind:marka="marka"
+                            ></markalar-item>
+                        </ul>
+                    </li>
+                    <li><a href="/blog" class="turuncu"><strong>KÜLTÜR</strong></a></li>
+                    <li><a href="/sevgililer-gunu-ozel">HEDİYELİKLER</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.html">GİRİŞ</a></li>
+                    <li class="dropdown" id="searchYap">
+                        <a href="#" class="search icon-search turuncu dropdown-toggle" data-toggle="dropdown" role="button"></a>
+                        <input v-model="aranacakKelime" type="text" class="form-control arama-kelimesi dropdown-menu" name="kelime" placeholder="Arama" autocomplete="off" v-on:keydown="aramaYap">
+                    </li>
+                    <li><a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu favori-icon" style="font-size: 32px;padding: 12px 15px 0 0;-webkit-text-stroke: 1.5px white;"></a></li>
+                    <li class="header-sepet sepet text-left roboto" id="sepetAc">
+                        <i @mouseover="mouseOver" class="icon kahve icon-sepet"></i>
+                        <a href="/sepet" class="turuncu sepete"></a>
+                        <template v-if="active">
+                            <div class="pencere roboto" style="display: block;">
+                            <ul class="list-unstyled kahve text-left">
+                              <!-- ürünler buraya girilecek -->
+                              <li v-for="alinacaklar in cart"><a :href="alinacaklar.url">{{alinacaklar.sepette}}</a><span class="pull-right">{{alinacaklar.fiyat}} TL</span></li>
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">{{toplam}} TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="pencere roboto" style="display: none;">
+                            <ul class="list-unstyled kahve text-left">
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+
+      <div class="katalog">
+      		<section class="urun-detay container">
+      		  <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+      		    <li>
+      		  	  <a href="/">Ana Sayfa</a>
+      		    </li>
+      		    <span class="turuncu">&gt;</span>
+      		    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      		  	  <a href="kahve-demleme-ekipmanlari.html" itemprop="item"><span itemprop="name">Kahve Demleme Ekipmanları</span></a>
+              </li>
+      		    <span class="turuncu">&gt;</span>
+      		    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/moka-pot" itemprop="item"><span itemprop="name">Moka Pot</span></a><meta itemprop="position" content="2"></li>
+      		    <span class="turuncu">&gt;</span>
+      		    <li>Moka Pot Alpina 3 Cup</li>
+      		  </ul>
+      		  <div class="row">
+      			  <div class="col-md-5" itemscope="itemscope" itemtype="http://schema.org/ImageObject">
+      					<img class="ana-resim" src="https://kahhvecom.imgix.net/urunler/76_1444578738_YZI.jpg">
+      				    <div class="thumb text-center">
+      							<img class="thumb-resim" id="img330" src="https://kahhvecom.imgix.net/urunler/76_1444578738_YZI.jpg">
+      							<img class="thumb-resim" id="img331" src="https://kahhvecom.imgix.net/urunler/76_1444578744_XpM.jpg">
+                    <img class="thumb-resim" id="img332" src="https://kahhvecom.imgix.net/urunler/76_1444578749_Ux2.jpg">
+                  </div>
+      			  </div>
+      			  <div class="col-md-7 bilgiler">
+        				<h1 class="turuncu" itemprop="name">MOKA POT ALPINA 3 CUP</h1>
+        				<h2 class="kahve roboto light" itemprop="brand"><a href="/bialetti">Bialetti</a></h2>
+        				<div class="agirlik roboto light"></div>
+        				<div style="display: none;" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+        			    <span itemprop="ratingValue">5</span>/5
+        				  <span itemprop="reviewCount">3</span>
+        				</div>
+        				<div class="yorum-oy ">
+        					<span class="star secili" data-rate="1"></span>
+        					<span class="star secili" data-rate="2"></span>
+        					<span class="star secili" data-rate="3"></span>
+        					<span class="star secili" data-rate="4"></span>
+        					<span class="star secili" data-rate="5"></span>
+        					<a class="turuncu roboto light yorum-goster pointer" style="vertical-align: top">(3 müşteri yorumu)</a>
+        				</div>
+        				  <p class="fiyat kahve" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+        							<span itemprop="price" content="219.99">219.99</span>
+        							<span itemprop="priceCurrency" content="TRY">TL</span>
+        					</p>
+                  <div class="kahve stok-out">ŞU AN STOKTA YOK</div>
+        					<a class="btn back-turuncu hatirlat-ekle pull-left" id="bialetti-moka-pot-alpini-3-cup-kahve-demleme-ekipmanlari">GELİNCE HABER VER</a>
+              </div>
+      		  </div>
+      	  </section>
+
+      	  <section class="aciklama container kahve roboto" itemprop="description">
+      		  <p>Saf ve lezzetli espresso keyfi yaşamanın en kolay yolu, İtalyan kahve severlerin vazgeçilmezi Moka pot, şimdi Bialetti markasının 2. Dünya Savaşı İtalyan Askerinden esinlenerek tasarlanan Alpina modeli ile karşınızda. Tercihiniz basitlik ve şıklık ise Moka Pot doğru tercih. Tek ihtiyacınız ince öğütülmüş kahve, biraz soğuk su, bir ocak ve 2 dk zaman.
+
+            </p>
+      		    *Moka Pot 3 parçadan oluşmaktadır. Soğuk su koyduğunuz su haznesi, Moka Pot için çekilmiş kahve koyduğunuz filtre ve Espressonuzun hazırlandığı gövde. <br>
+              *Alüminyum döküm malzemeden üretilmiştir.<br>
+              *3 Kişiliktir (Yaklaşık 180 ml).<br>
+              *Bulaşık makinesinde yıkanmaz. <br>
+              *Sadece su ile temizlenebilir.
+          </section>
+
+      	<section class="benzer-urunler back-gray urun-serit text-center voffset3"> <!-- Sepete ekleme fonksiyonları olmadığından direkt siteden alınmıştır. -->
+      		<div class="container">
+      			<h3 class="turuncu">BENZER ÜRÜNLER</h3>
+      			<div class="benzer-urunler-listesi" style="min-height: 325px;"><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/bialetti-orzo-express-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/456_1492581342_zGf.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=fef1c8ce8eacfa765f603a45cd14a0a4"></a></div><a href="/bialetti-orzo-express-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Orzo Express</span></div></a><a href="/bialetti"><div class="text-center marka roboto">Bialetti</div></a><div class="text-center fiyat"><price>129.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/bialetti-moka-pot-baslangic-seti-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/135_1569671319_5Up.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=9f9e1bcfdecc5bbdc8b2842e7b835054"></a></div><a href="/bialetti-moka-pot-baslangic-seti-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Moka Pot Tanışma Seti 3 CUP</span></div></a><a href="/bialetti"><div class="text-center marka roboto">Bialetti</div></a><div class="text-center fiyat"><price>219.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/bialetti-moka-pot-express-2-cup-kahveler"><img src="https://kahhvecom.imgix.net/urunler/87_1552055185_gUc.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=0aff27df53deeb8f7589d4a61c6ce963"></a></div><a href="/bialetti-moka-pot-express-2-cup-kahveler"><div class="title text-center"><span class="inner-title">Moka Pot Express 2 Cup</span></div></a><a href="/bialetti"><div class="text-center marka roboto">Bialetti</div></a><div class="text-center fiyat"><price>169.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/bialetti-moka-pot-brikka-2-cup-moka-pot"><img src="https://kahhvecom.imgix.net/urunler/226_1557235930_GYE.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=cbd59fc79c523461179827031356b427"></a></div><a href="/bialetti-moka-pot-brikka-2-cup-moka-pot"><div class="title text-center"><span class="inner-title">Moka Pot Brikka 2 Cup</span></div></a><a href="/bialetti"><div class="text-center marka roboto">Bialetti</div></a><div class="text-center fiyat"><price>249.99 TL</price></div></div></div></div>
+      		</div>
+      	</section>
+
+      	<section class="benzer-urunler urun-serit text-center voffset3"> <!-- Sepete ekleme fonksiyonları olmadığından direkt siteden alınmıştır. -->
+      		<div class="container">
+      			<h3 class="turuncu">BİRLİKTE ALINANLAR</h3>
+      			<div class="birlikte-alinanlar-listesi" style="min-height: 325px;"><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/kahhvecom-tanisma-seti-kahveler"><img src="https://kahhvecom.imgix.net/urunler/92_1569671134_BG8.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=29a2a33d1c5e2839722d3291a0ea2f49"></a></div><a href="/kahhvecom-tanisma-seti-kahveler"><div class="title text-center"><span class="inner-title">Kahhve Tanışma Seti</span></div></a><a href="/kahhvecom"><div class="text-center marka roboto">KahhveCom</div></a><div class="text-center fiyat"><price>49.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/hario-v60-02-filtre-kagidi-100-adet"><img src="https://kahhvecom.imgix.net/urunler/97_1566300500_rqa.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=c2e43d89652d7d02f2c1e0caad13a9c2"></a></div><a href="/hario-v60-02-filtre-kagidi-100-adet"><div class="title text-center"><span class="inner-title">V60 02 Filtre Kağıdı 100 Adet</span></div></a><a href="/hario"><div class="text-center marka roboto">Hario</div></a><div class="text-center fiyat"><price>39.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/hario-v60-02-dripper-beyaz-seramik-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/94_1453646682_GML.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=6abb9ff592acb886e4cd0648cf36f8c7"></a></div><a href="/hario-v60-02-dripper-beyaz-seramik-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">V60 02 Seramik Dripper Beyaz</span></div></a><a href="/hario"><div class="text-center marka roboto">Hario</div></a><div class="text-center fiyat"><price>149.99 TL</price></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/cool-beans-chocolate-mints-kahveler"><img src="https://kahhvecom.imgix.net/urunler/70_1442606077_X6m.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=8d5dcaad7c46d9fadf23886d94948d83"></a></div><a href="/cool-beans-chocolate-mints-kahveler"><div class="title text-center"><span class="inner-title">Chocolate Mints</span></div></a><a href="/cool-beans"><div class="text-center marka roboto">Cool Beans</div></a><div class="text-center fiyat"><price>39.99 TL</price></div></div></div></div>
+      		</div>
+      	</section>
+
+      	<section class="urun-ilaveler"> <!-- Yorumlar siteden örnek olarak alınmıştır. -->
+      		<ul class="text-center ust-kisim container-fluid no-padding back-kahve beyaz pointer" role="tablist">
+      			<li role="presentation" class="col-md-6 yorumlar active"><div href="#yorumlar" aria-controls="yorumlar" role="tab" data-toggle="tab">YORUMLAR</div></li>
+      			<li role="presentation" class="col-md-6 soru-cevap"><div href="#soru-cevap" aria-controls="soru-cevap" role="tab" data-toggle="tab">SORU CEVAP</div></li>
+      		</ul>
+      		<div class="tab-content voffset2 bulutlar">
+      			<div role="tabpanel" class="tab-pane" id="soru-cevap">
+      				<div class="container text-left roboto">
+      					<div class="kahve"><strong>Soru:</strong></div>
+      					<p class="kahve">İki kişilik Moka Pot ile bir servis yapılabiliyor mu,yapılyorsa tadını etkiler mi Teşekkürler</p>
+      					<footer style="color: #a2a2a2; margin:20px 0;">
+      						- Bahadır SUNGUR
+                </footer>
+      					<div class="turuncu"><strong>Cevap:</strong></div>
+      					<p class="turuncu">Moka pot'un her kullanımında kahve haznesinin tamamının doldurulması gerekmektedir. Böylece uygun basıncı oluşturulması sağlanır. Servis boyutları küçük olduğundan 2 kişilik moka pot tek kişi için uygundur ama 3 kişilik moka pot ile tek kişilik yapmak uygun olmayacaktır.</p>
+      				</div>
+      				<hr>
+
+      				<div class="voffset3 text-center kahve roboto light">Ürün hakkında öğrenmek istediğiniz bir sorunuz var ise bizimle <a style="color:#c65800 !important;" href="#">paylaşabilirsiniz.</a></div>
+      			</div>
+
+      			<div role="tabpanel" class="tab-pane active" id="yorumlar">
+              <div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="container text-left roboto siparis-yorum">
+      					<div class="yorum-oy">
+      						<span class="star " data-rate="1"></span>
+      						<span class="star " data-rate="2"></span>
+      						<span class="star " data-rate="3"></span>
+      						<span class="star " data-rate="4"></span>
+      						<span class="star " data-rate="5"></span>
+      					</div>
+      					<p class="kahve light" itemprop="reviewBody">Çok memnun kaldım. Teşekkür ederim.</p>
+      					<footer style="color: #a2a2a2; margin:20px 0;" itemprop="author">
+      						- Atilla
+                </footer>
+      				</div>
+      				<hr>
+
+      				<div class="voffset3 text-center kahve roboto light">Yorum yapmak için <a style="color:#c65800 !important;" href="login.html">üye girişi</a> yapmanız gerekmektedir.</div>
+      			</div>
+      		</div>
+      	</section>
+      </div>
+    </div>
+
+    <section class="container-fluid kupa-sayisi">
+    	<div class="roboto light govde">
+    		<div class="kucuk2" style="margin-bottom: 30px;">Sayısız kahvesever tarafından tercih edildi</div>
+    		<span class="buyuk2">1,682,738</span>
+    		<div style="font-size: 0.4em;">kupa kahve içildi.</div>
+    	</div>
+    </section>
+
+    <section class="ozelliklerimiz">
+    	<div class="ust-resim">
+    		<div class="baslik">
+    			<div class="turuncu inner">KAHVENİN GÜVENİLİR ADRESİ</div>
+    		</div>
+    		<img class="hidden-xs beklemede" src="src\img\layout\kahhve-ozellik.jpg">
+    	</div>
+    	 <div class="govde">
+    		<div class="container text-center">
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\kargo.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">AYNI GÜN KARGOLAMA</h4>
+    				<p>16.00'a kadar gelen siparişler aynı gün kargoda</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\iade.svg" class="box-shadow beklemede"></div>
+    				<h4 class="turuncu voffset2">ÜCRETSİZ İADE</h4>
+    				<p>Memnun kalmadığınız ürünü hiçbir masraf ödemeden iade imkanı</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\guvenlik.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">GÜVENLİ ÖDEME</h4>
+    				<p>256-bit SSL Encrypted Ödeme Sistemi ile tek tıkla sipariş</p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="row uclu voffset3">
+    	<a href="/blog" class="col-md-4 col-sm-12 bolum orta">
+    		<div class="kultur">
+    			<h3>BLOG</h3>
+    			<p>Kahhveyle ilgili haberler,<br>bilgiler, teknikler, gelişmeler...</p>
+    		</div>
+    	</a>
+    	<div class="col-md-8 col-sm-12 bolum subscription-outer">
+    		<div class="subscription">
+    			<h3>İLK SİZ HABERDAR OLUN</h3><p class="roboto kucuk1">Kahveyi o kadar seviyoruz ki, her geçen gün yepyeni bir kahveyi ve ekipmanı ürün ailemize ekliyor, kahveyle ilgili güncel gelişmeleri keyifle araştırıyoruz. Sizi de haberdar etmemizi isterseniz e-bültenimize üye olabilirsiniz.</p>
+    			<form class="mail-bulten" id="e-mail">
+    				<input type="email" placeholder="mail adresini girin" class="mail">
+    				<input v-on:click="mailAlert" type="submit" value="ÜYE OL" class="back-turuncu">
+    			</form>
+    		</div>
+    	</div>
+    </section>
+
+    <footer id="footer" v-if="isAvailable" class="urunserit back-gray">
+      <a v-on:click="acKapa" class="btn text-center back-turuncu">Bilgileri Kapat</a>
+    	<div class="container" style="padding-bottom: 20px;">
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="bilgiler-1">
+    			<h3 class="turuncu">KAHHVE.COM</h3>
+    			<ul>
+                    <bilgiler-item
+                        v-for="bilgi in bilgiler"
+                        v-bind:bilgi="bilgi"
+                    ></bilgiler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="kategoriler-1">
+    			<h3 class="turuncu">KATEGORİLER</h3>
+    			<ul class="row">
+                    <kategoriler-item
+                        v-for="kategori in kategoriler"
+                        v-bind:kategori="kategori"
+                    ></kategoriler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" id="markalar-2">
+    			<h3 class="turuncu">MARKALAR</h3>
+    			<ul>
+                    <markalar-item class="col-xs-6 no-padding"
+                        v-for="marka in markalar"
+                        v-bind:marka="marka"
+                    ></markalar-item>
+                </ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" >
+    			<h3 class="turuncu">İLETİŞİM</h3>
+    			<span class="turuncu">5A GRUP MAĞAZACILIK BİLİŞİM <br>TEKNOLOJİ VE DANIŞMANLIK A.Ş.</span>
+    			<br>
+    			Evren Sitesi E Blok İçerenköy / Ataşehir / İstanbul
+          <br>
+    			<span class="turuncu">info@kahhve.com</span> 0 850 522 04 94
+    			<h3 class="turuncu">BİZİ TAKİP EDİN</h3>
+            <ul class="social row">
+              <li><a href="https://www.facebook.com/kahhvecom" target="_blank" rel="nofollow" class="facebook"></a></li>
+      				<li><a href="https://twitter.com/kahhvecom" target="_blank" rel="nofollow" class="twitter"></a></li>
+      				<li><a href="https://www.instagram.com/kahhvecom/" target="_blank" rel="nofollow" class="instagram"></a></li>
+      				<li><a href="https://www.youtube.com/user/kahhve" target="_blank" rel="nofollow" class="youtube"></a></li>
+      				<li><a href="https://pinterest.com/kahhvecom/" target="_blank" rel="nofollow" class="pinterest"></a></li>
+    			</ul>
+    		</div>
+    	</div>
+
+    	<div class="container-fluid gray beyaz-alan">
+    		<div class="col-md-3 guvenli-alisveris">
+    			<div>İnternette Güvenli Alışveriş</div>
+    			<span class="comodo"></span>
+    		</div>
+    		<div class="col-md-6 kredi-kartlari"></div>
+    		<div class="footer-copyright text-center col-md-3">
+    			<div>© 2014 - 2019 kahhve.com Tüm hakları saklıdır.</div>
+    			<div>Çağrı Merkezi: 0 (850) 522 04 94 <span>-</span> info@kahhve.com</div>
+    		</div>
+    	</div>
+    </footer>
+  </body>
+  <script src="index.js" charset="utf-8"></script>
+
+</html>

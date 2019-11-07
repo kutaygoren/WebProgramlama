@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+  <head>
+    <script src="node_modules\vue\dist\vue.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="src\favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src\favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="src\favicon-96x96.png" sizes="96x96">
+
+
+    <title>Kahve, Kahve Çeşitleri, Kahve Demleme Ekipmanları | KahhveCom</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <!-- font yüklemek için -->
+    <script>
+     WebFont.load({
+        google: {
+          families: ['Jaldi:400,700', 'Roboto:300,400,700']
+        }
+      });
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="src\css\styles.css" />
+    <link rel="stylesheet" type="text/css" href="src\fonts\kahhve-fonts.css" />
+  </head>
+
+  <body>
+
+    <header class="navbar navbar-default">
+
+        <div class="container">
+           <div class="navbar-header">
+                <a class="logo" href="index.html"><img src="src\img\logo_mini.png" alt="KahhveCom"/></a>
+                <a class="turuncu icon-search visible-sm visible-xs visible-md" style="right: 170px;"></a>
+                <a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu visible-sm visible-xs visible-md favori-icon" style="position: absolute;right: 105px;top: 10px;font-size: 40px;padding: 12px 15px 0 0;-webkit-text-stroke: 2.5px white;"></a>
+                <a class="turuncu icon-profil visible-sm visible-xs visible-md profil-toggle" href="#"></a>
+                <span class="sepet icon visible-sm visible-xs visible-md">
+                    <i class="icon kahve icon-sepet"></i>
+                    <a href="sepet.html" class="turuncu sepete"></a>
+                </span>
+            </div>
+
+            <div class="hidden-sm hidden-xs hidden-md navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav basliklar">
+                    <li><a href="kahveler.html">KAHHVELER</a></li>
+                    <li><a href="kahve-demleme-ekipmanlari.html">EKİPMAN & AKSESUARLAR</a></li>
+                    <li><a href="kahve-tanisma-setleri.html">TANIŞMA SETLERİ</a></li>
+                    <li class="dropdown" id="markalar-1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MARKALAR <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="kahveler">
+                            <markalar-item class="col-md-6"
+                                v-for="marka in markalar"
+                                v-bind:marka="marka"
+                            ></markalar-item>
+                        </ul>
+                    </li>
+                    <li><a href="/blog" class="turuncu"><strong>KÜLTÜR</strong></a></li>
+                    <li><a href="/sevgililer-gunu-ozel">HEDİYELİKLER</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.html">GİRİŞ</a></li>
+                    <li class="dropdown" id="searchYap">
+                        <a href="#" class="search icon-search turuncu dropdown-toggle" data-toggle="dropdown" role="button"></a>
+                        <input v-model="aranacakKelime" type="text" class="form-control arama-kelimesi dropdown-menu" name="kelime" placeholder="Arama" autocomplete="off" v-on:keydown="aramaYap">
+                    </li>
+                    <li><a href="/kullanici/favorilerim" class="glyphicon glyphicon-heart-empty turuncu favori-icon" style="font-size: 32px;padding: 12px 15px 0 0;-webkit-text-stroke: 1.5px white;"></a></li>
+                    <li class="header-sepet sepet text-left roboto" id="sepetAc">
+                        <i @mouseover="mouseOver" class="icon kahve icon-sepet"></i>
+                        <a href="/sepet" class="turuncu sepete"></a>
+                        <template v-if="active">
+                            <div class="pencere roboto" style="display: block;">
+                            <ul class="list-unstyled kahve text-left">
+                              <!-- ürünler buraya girilecek -->
+                              <li v-for="alinacaklar in cart"><a :href="alinacaklar.url">{{alinacaklar.sepette}}</a><span class="pull-right">{{alinacaklar.fiyat}} TL</span></li>
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">{{toplam}} TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="pencere roboto" style="display: none;">
+                            <ul class="list-unstyled kahve text-left">
+                            </ul>
+                            <div class="seperator"></div>
+                            <div class="voffset2 kahve">
+                                <strong>Toplam</strong>
+                                <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
+                            </div>
+                                <div class="voffset5 text-right beyaz">
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
+                                    <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
+                                </div>
+                            </div>
+                        </template>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+      <div class="katalog" id="kahhveEkipmanlar">
+      		<section class="urun-detay container">
+      		  <ul class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+      		    <li>
+      		  	  <a href="/">Ana Sayfa</a>
+      		    </li>
+      		    <span class="turuncu">&gt;</span>
+      		    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      		  	  <a href="kahve-demleme-ekipmanlari.html" itemprop="item"><span itemprop="name">Kahve Demleme Ekipmanları</span></a>
+      		    </li>
+          		  <span class="turuncu">&gt;</span>
+          		  <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/chemex-kahve-ekipmanlari" itemprop="item"><span itemprop="name">{{ chemexUrunler[1].marka }}</span></a><meta itemprop="position" content="2"></li>
+          		  <span class="turuncu">&gt;</span>
+          		  <li>{{ chemexUrunler[1].title }}</li>
+          	</ul>
+          		<!--Breadcrumbs Close-->
+          	<div class="row">
+        			<div class="col-md-5" itemscope="itemscope" itemtype="http://schema.org/ImageObject">
+        				<img class="ana-resim" src="https://kahhvecom.imgix.net/urunler/47_1439898391_u6Z.jpg?auto=enhanced&amp;h=750&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=750&amp;s=2f62038ce7401596defd9714f86e1a36" alt="Chemex Ahşap Tutacaklı 6 Cup">
+        				<div class="thumb text-center">
+        					<img class="thumb-resim" id="img28" src="https://kahhvecom.imgix.net/urunler/47_1439898391_u6Z.jpg">
+        					<img class="thumb-resim" id="img29" src="https://kahhvecom.imgix.net/urunler/47_1439898414_17I.jpg">
+                  <img class="thumb-resim" id="img30" src="https://kahhvecom.imgix.net/urunler/47_1439898429_Vti.jpg">
+                </div>
+        			</div>
+        			<div class="col-md-7 bilgiler">
+        				<h1 class="turuncu" itemprop="name">{{ chemexUrunler[1].title }}</h1>
+        				<h2 class="kahve roboto light" itemprop="brand"><a href="/chemex">{{ chemexUrunler[1].marka }}</a></h2>
+        				<div class="agirlik roboto light"></div>
+        				<div style="display: none;" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+        					<span itemprop="ratingValue">0</span>/5
+        					<span itemprop="reviewCount">0</span>
+        				</div>
+        				<p class="fiyat kahve" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+    							<span itemprop="price" content="379.99">{{ chemexUrunler[1].fiyat }}</span>
+    							<span itemprop="priceCurrency" content="TRY">TL</span>
+        				</p>
+    						<div class="adet">
+    							<div class="dropdown">
+    								<div class="adet-ayarlama text-center">
+    									<span v-on:click="adetDown" class="back-kahve beyaz pointer">-</span>
+    									<span v-on:click="adetUp" class="back-kahve beyaz pointer">+</span>
+    								</div>
+    								<span class="kahve roboto">Adet:</span>
+    								<span class="turuncu roboto">{{ adet }}</span>
+    							</div>
+    							<div>
+    								<a v-on:click="kahhveSepeteEkle(1)" class="btn back-turuncu sepete-ekle">SEPETE EKLE</a>
+    								<a class="pull-right turuncu pointer favori-ekle" style="font-size: 42px;padding-right: 10px;padding-top: 2px;"><i class="glyphicon glyphicon-heart-empty"></i></a>
+    							</div>
+    						</div>
+        			</div>
+        		</div>
+        	</section>
+
+        	<section class="aciklama container kahve roboto" itemprop="description">
+        		<p>Modern zamanın en başarılı tasarımlarından biri kabul edilen Chemex, tadına hayran kalacağınız bir kahve deneyimi sunuyor. Mühendislik dehası laboratuvar camı sayesinde kahveniz aromasını yitirmiyor. Hem oldukça şık bir dizayna hem de kolay bir kullanıma sahip bu araçla kendinize ve sevdiklerinize orta yumuşaklıkta ve içimi kolay kahveler demleyebilirsiniz.</p>
+        		*Yaklaşık 880 mL hacme sahiptir.<br>
+            *Yaklaşık 22 cm yüksekliğe ve 13 cm çapa sahiptir.<br>
+            *Borosilikat cam teknolojisi ile kimyasalların camda kalmasını engeller.<br>
+            *Chemex filtresi kullanılmalıdır.<br>
+            *Cilalanmış ahşap tutacak ve deri kayışa sahiptir.<br>
+            <br>
+            Nasıl Kullanılır?<br>
+            Modele uygun boyutta Chemex filtresini ürüne yerleştirin. Filtreyi sıcak suyla hafifçe ıslatıp suyu dökün. Uygun boyutta öğütülmüş kahveyi filtreye koyun ve her yerini sıcak suyla ıslatıp 30 saniye kadar bekleyin. Sonrasında dairesel hareketlerle her 6 gram kahve için 100 mL su ekleyin. Kahve tamamen süzüldüğünde servise hazır olacak.<br>
+        	</section>
+
+        	<section class="benzer-urunler back-gray urun-serit text-center voffset3" id="benzerurunler"> <!-- Sepete ekleme fonksiyonları olmadığından direkt siteden alınmıştır. -->
+        		<div class="container">
+        			<h3 class="turuncu">BENZER ÜRÜNLER</h3>
+        			<div class="benzer-urunler-listesi" style="min-height: 325px;"><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/chemex-set-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/69_1569671022_3OC.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=9c425751425772f77c891f96a256cf38"></a></div><a href="/chemex-set-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Chemex Tanışma Seti</span></div></a><a href="/chemex"><div class="text-center marka roboto">Chemex</div></a><div class="text-center fiyat"><p>494.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/chemex-beyaz-filtre-filtreler"><img src="https://kahhvecom.imgix.net/urunler/50_1440881161_NU3.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=33843f44a2de6056b9a294c5aaec1725"></a></div><a href="/chemex-beyaz-filtre-filtreler"><div class="title text-center"><span class="inner-title">Beyaz Filtre 6-8 Cup</span></div></a><a href="/chemex"><div class="text-center marka roboto">Chemex</div></a><div class="text-center fiyat"><p>74.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/chemex-ahsap-tutacakli-3-cup-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/138_1440706475_4ek.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=d06636eb01a17b0c0be29e73a990ff87"></a></div><a href="/chemex-ahsap-tutacakli-3-cup-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Ahşap Tutacaklı 3 Cup</span></div></a><a href="/chemex"><div class="text-center marka roboto">Chemex</div></a><div class="text-center fiyat"><p>339.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/aeropress-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/49_1565327535_Hjv.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=d0a485369e58330ec5b43212cb60ce4e"></a></div><a href="/aeropress-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Aeropress</span></div></a><a href="/aeropress"><div class="text-center marka roboto">Aeropress</div></a><div class="text-center fiyat"><p>289.99 TL</p></div></div></div></div>
+        		</div>
+        	</section>
+
+        	<section class="benzer-urunler urun-serit text-center voffset3" id="benzerurunler"> <!-- Sepete ekleme fonksiyonları olmadığından direkt siteden alınmıştır. -->
+        		<div class="container">
+        			<h3 class="turuncu">BİRLİKTE ALINANLAR</h3>
+        			<div class="birlikte-alinanlar-listesi" style="min-height: 325px;"><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/hario-v60-02-filtre-kagidi-100-adet"><img src="https://kahhvecom.imgix.net/urunler/97_1566300500_rqa.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=c2e43d89652d7d02f2c1e0caad13a9c2"></a></div><a href="/hario-v60-02-filtre-kagidi-100-adet"><div class="title text-center"><span class="inner-title">V60 02 Filtre Kağıdı 100 Adet</span></div></a><a href="/hario"><div class="text-center marka roboto">Hario</div></a><div class="text-center fiyat"><p>39.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/chemex-beyaz-filtre-filtreler"><img src="https://kahhvecom.imgix.net/urunler/50_1440881161_NU3.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=33843f44a2de6056b9a294c5aaec1725"></a></div><a href="/chemex-beyaz-filtre-filtreler"><div class="title text-center"><span class="inner-title">Beyaz Filtre 6-8 Cup</span></div></a><a href="/chemex"><div class="text-center marka roboto">Chemex</div></a><div class="text-center fiyat"><p>74.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/aeropress-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/49_1565327535_Hjv.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=d0a485369e58330ec5b43212cb60ce4e"></a></div><a href="/aeropress-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Aeropress</span></div></a><a href="/aeropress"><div class="text-center marka roboto">Aeropress</div></a><div class="text-center fiyat"><p>289.99 TL</p></div></div></div><div class="col-md-3 col-xs-6"><div class="urun"><div class="urun-resmi" style="position: relative;"><a href="/hario-kettle-buono-kahve-demleme-ekipmanlari"><img src="https://kahhvecom.imgix.net/urunler/95_1440933095_gr7.jpg?auto=enhanced&amp;h=275&amp;ixlib=php-1.0.6&amp;lossless=1&amp;w=275&amp;s=b6b0c7acb161d77b737fde5e2a99bf7e"></a></div><a href="/hario-kettle-buono-kahve-demleme-ekipmanlari"><div class="title text-center"><span class="inner-title">Kettle Buono 1.2 Lt</span></div></a><a href="/hario"><div class="text-center marka roboto">Hario</div></a><div class="text-center fiyat"><p>309.99 TL</p></div></div></div></div>
+        		</div>
+        	</section>
+
+        	<section class="urun-ilaveler"> <!-- Yorumlar siteden örnek olarak alınmıştır. -->
+        		<ul class="text-center ust-kisim container-fluid no-padding back-kahve beyaz pointer" role="tablist">
+        			<li role="presentation" class="col-md-6 yorumlar active"><div href="#yorumlar" aria-controls="yorumlar" role="tab" data-toggle="tab">YORUMLAR</div></li>
+        			<li role="presentation" class="col-md-6 soru-cevap"><div href="#soru-cevap" aria-controls="soru-cevap" role="tab" data-toggle="tab">SORU CEVAP</div></li>
+        		</ul>
+        		<div class="tab-content voffset2 bulutlar">
+        			<div role="tabpanel" class="tab-pane" id="soru-cevap">
+        				<div class="container text-left roboto">
+        					<div class="kahve"><strong>Soru:</strong></div>
+        					<p class="kahve">Chemex ile demleme yapmak icin kahveyi hangi boyutta cektirmeliyim? French presslik kullansam demlemede sıkıntı yasar mıyım  ? Tesekkürler..</p>
+        					<footer style="color: #a2a2a2; margin:20px 0;">
+        						- Meryem Demir
+                  </footer>
+        					<div class="turuncu"><strong>Cevap:</strong></div>
+        					<p class="turuncu">French Press'ten biraz daha ince kagit filtre'den biraz daha kalin olmasi gerekiyor.</p>
+        				</div>
+        				<hr>
+
+        				<div class="voffset3 text-center kahve roboto light">Ürün hakkında öğrenmek istediğiniz bir sorunuz var ise bizimle <a style="color:#c65800 !important;" href="#" data-toggle="modal" data-target="#yenisoru">paylaşabilirsiniz.</a></div>
+              </div>
+
+        			<div role="tabpanel" class="tab-pane active" id="yorumlar">
+                <div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="container text-left roboto siparis-yorum">
+        					<div class="yorum-oy">
+        						<span class="star " data-rate="1"></span>
+        						<span class="star " data-rate="2"></span>
+        						<span class="star " data-rate="3"></span>
+        						<span class="star " data-rate="4"></span>
+        						<span class="star " data-rate="5"></span>
+        					</div>
+        					<p class="kahve light" itemprop="reviewBody">Sipariş ettiğim günün sonrası harika bir şekilde paketlenmiş olarak elime ulaştı. Kahhve.com’dan aldığım hiçbir ürünle ilgili sıkıntı yaşamadım. İç rahat ettiren firma</p>
+        					<footer style="color: #a2a2a2; margin:20px 0;" itemprop="author">
+        						- ilayda
+                  </footer>
+        				</div>
+        				<hr>
+
+        				<div class="voffset3 text-center kahve roboto light">Yorum yapmak için <a style="color:#c65800 !important;" href="login.html">üye girişi</a> yapmanız gerekmektedir.</div>
+        			</div>
+          	</div>
+      	</section>
+      </div>
+    </div>
+
+    <section class="container-fluid kupa-sayisi">
+    	<div class="roboto light govde">
+    		<div class="kucuk2" style="margin-bottom: 30px;">Sayısız kahvesever tarafından tercih edildi</div>
+    		<span class="buyuk2">1,682,738</span>
+    		<div style="font-size: 0.4em;">kupa kahve içildi.</div>
+    	</div>
+    </section>
+
+    <section class="ozelliklerimiz">
+    	<div class="ust-resim">
+    		<div class="baslik">
+    			<div class="turuncu inner">KAHVENİN GÜVENİLİR ADRESİ</div>
+    		</div>
+    		<img class="hidden-xs beklemede" src="src\img\layout\kahhve-ozellik.jpg">
+    	</div>
+    	 <div class="govde">
+    		<div class="container text-center">
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\kargo.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">AYNI GÜN KARGOLAMA</h4>
+    				<p>16.00'a kadar gelen siparişler aynı gün kargoda</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\iade.svg" class="box-shadow beklemede"></div>
+    				<h4 class="turuncu voffset2">ÜCRETSİZ İADE</h4>
+    				<p>Memnun kalmadığınız ürünü hiçbir masraf ödemeden iade imkanı</p>
+    			</div>
+    			<div class="col-md-4 col-sm-12 kahve roboto light">
+    				<div class="icon">
+    					<img src="src\img\layout\guvenlik.svg" class="box-shadow beklemede">
+    				</div>
+    				<h4 class="turuncu voffset2">GÜVENLİ ÖDEME</h4>
+    				<p>256-bit SSL Encrypted Ödeme Sistemi ile tek tıkla sipariş</p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="row uclu voffset3">
+    	<a href="/blog" class="col-md-4 col-sm-12 bolum orta">
+    		<div class="kultur">
+    			<h3>BLOG</h3>
+    			<p>Kahhveyle ilgili haberler,<br>bilgiler, teknikler, gelişmeler...</p>
+    		</div>
+    	</a>
+    	<div class="col-md-8 col-sm-12 bolum subscription-outer">
+    		<div class="subscription">
+    			<h3>İLK SİZ HABERDAR OLUN</h3><p class="roboto kucuk1">Kahveyi o kadar seviyoruz ki, her geçen gün yepyeni bir kahveyi ve ekipmanı ürün ailemize ekliyor, kahveyle ilgili güncel gelişmeleri keyifle araştırıyoruz. Sizi de haberdar etmemizi isterseniz e-bültenimize üye olabilirsiniz.</p>
+    			<form class="mail-bulten" id="e-mail">
+    				<input type="email" placeholder="mail adresini girin" class="mail">
+    				<input v-on:click="mailAlert" type="submit" value="ÜYE OL" class="back-turuncu">
+    			</form>
+    		</div>
+    	</div>
+    </section>
+
+    <footer id="footer" v-if="isAvailable" class="urunserit back-gray">
+      <a v-on:click="acKapa" class="btn text-center back-turuncu">Bilgileri Kapat</a>
+    	<div class="container" style="padding-bottom: 20px;">
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="bilgiler-1">
+    			<h3 class="turuncu">KAHHVE.COM</h3>
+    			<ul>
+                    <bilgiler-item
+                        v-for="bilgi in bilgiler"
+                        v-bind:bilgi="bilgi"
+                    ></bilgiler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="kategoriler-1">
+    			<h3 class="turuncu">KATEGORİLER</h3>
+    			<ul class="row">
+                    <kategoriler-item
+                        v-for="kategori in kategoriler"
+                        v-bind:kategori="kategori"
+                    ></kategoriler-item>
+    			</ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" id="markalar-2">
+    			<h3 class="turuncu">MARKALAR</h3>
+    			<ul>
+                    <markalar-item class="col-xs-6 no-padding"
+                        v-for="marka in markalar"
+                        v-bind:marka="marka"
+                    ></markalar-item>
+                </ul>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 kahve" >
+    			<h3 class="turuncu">İLETİŞİM</h3>
+    			<span class="turuncu">5A GRUP MAĞAZACILIK BİLİŞİM <br>TEKNOLOJİ VE DANIŞMANLIK A.Ş.</span>
+    			<br>
+    			Evren Sitesi E Blok İçerenköy / Ataşehir / İstanbul
+          <br>
+    			<span class="turuncu">info@kahhve.com</span> 0 850 522 04 94
+    			<h3 class="turuncu">BİZİ TAKİP EDİN</h3>
+            <ul class="social row">
+              <li><a href="https://www.facebook.com/kahhvecom" target="_blank" rel="nofollow" class="facebook"></a></li>
+      				<li><a href="https://twitter.com/kahhvecom" target="_blank" rel="nofollow" class="twitter"></a></li>
+      				<li><a href="https://www.instagram.com/kahhvecom/" target="_blank" rel="nofollow" class="instagram"></a></li>
+      				<li><a href="https://www.youtube.com/user/kahhve" target="_blank" rel="nofollow" class="youtube"></a></li>
+      				<li><a href="https://pinterest.com/kahhvecom/" target="_blank" rel="nofollow" class="pinterest"></a></li>
+    			</ul>
+    		</div>
+    	</div>
+
+    	<div class="container-fluid gray beyaz-alan">
+    		<div class="col-md-3 guvenli-alisveris">
+    			<div>İnternette Güvenli Alışveriş</div>
+    			<span class="comodo"></span>
+    		</div>
+    		<div class="col-md-6 kredi-kartlari"></div>
+    		<div class="footer-copyright text-center col-md-3">
+    			<div>© 2014 - 2019 kahhve.com Tüm hakları saklıdır.</div>
+    			<div>Çağrı Merkezi: 0 (850) 522 04 94 <span>-</span> info@kahhve.com</div>
+    		</div>
+    	</div>
+    </footer>
+  </body>
+  <script src="index.js" charset="utf-8"></script>
+
+</html>

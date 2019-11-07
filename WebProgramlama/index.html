@@ -47,9 +47,9 @@
 
                 <div class="hidden-sm hidden-xs hidden-md navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav basliklar">
-                        <li><a href="/kahveler">KAHHVELER</a></li>
-                        <li><a href="/kahve-demleme-ekipmanlari">EKİPMAN & AKSESUARLAR</a></li>
-                        <li><a href="/kahve-tanisma-setleri">TANIŞMA SETLERİ</a></li>
+                        <li><a href="kahveler.html">KAHHVELER</a></li>
+                        <li><a href="kahve-demleme-ekipmanlari.html">EKİPMAN & AKSESUARLAR</a></li>
+                        <li><a href="kahve-tanisma-setleri.html">TANIŞMA SETLERİ</a></li>
                         <li class="dropdown" id="markalar-1">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MARKALAR <span class="caret"></span></a>
                             <ul class="dropdown-menu" id="kahveler">
@@ -185,7 +185,7 @@
         </div>
 		  </div>
 	</div>
-	<a href="/kahve-tanisma-setleri" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
+	<a href="kahve-tanisma-setleri.html" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
 </section>
 
 <div class="back-gray">
@@ -240,7 +240,7 @@
       </div>
 		</div>
 	</div>
-	<a href="/kahveler" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
+	<a href="kahveler.html" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
 </section>
 
 <div class="back-gray">
@@ -265,7 +265,7 @@
         </div>
       </div>
 	  </div>
-		<a href="/kahve-demleme-ekipmanlari" class="btn text-center">TÜMÜNÜ GÖR</a>
+		<a href="kahve-demleme-ekipmanlari.html" class="btn text-center">TÜMÜNÜ GÖR</a>
 	</section>
 </div>
 
@@ -312,12 +312,8 @@
 		</div>
 		<a href="/blog" class="btn text-center back-turuncu">TÜMÜNÜ GÖR</a>
 	</section>
+  </div>
 </div>
-
-    <div class="yukleniyor">
-        <div class="zeplin"></div>
-    </div>
-        </div>
 
 
 <section class="container-fluid kupa-sayisi">
@@ -379,7 +375,8 @@
 	</div>
 </section>
 
-<footer class="urunserit back-gray">
+<footer id="footer" v-if="isAvailable" class="urunserit back-gray">
+  <a v-on:click="acKapa" class="btn text-center back-turuncu">Bilgileri Kapat</a>
 	<div class="container" style="padding-bottom: 20px;">
 		<div class="col-md-2 col-sm-6 col-xs-12 kahve" id="bilgiler-1">
 			<h3 class="turuncu">KAHHVE.COM</h3>

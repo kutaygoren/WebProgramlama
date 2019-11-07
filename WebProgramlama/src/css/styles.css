@@ -588,11 +588,11 @@ section.information .sag-bolum {
 }
 
 .katalog .baslik.kahveler {
-    background-image: linear-gradient(to right, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('/zeplin/img/kahve.jpg');
+    background-image: linear-gradient(to right, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('https://kahhve.com/zeplin/img/kahve.jpg');
 }
 
 .katalog .baslik.ekipmanlar {
-    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('https://kahhve.com/zeplin/img/ekipman.jpg');
 }
 
 .katalog .baslik h1 {
@@ -634,11 +634,11 @@ section.information .sag-bolum {
 }
 
 .katalog .baslik.kahveler .back-ekipman {
-    background-image: url('/zeplin/img/Kahveler_ekipmanlar.png');
+    background-image: url('https://kahhve.com/zeplin/img/Kahveler_ekipmanlar.png');
 }
 
 .katalog .baslik.ekipmanlar .back-ekipman {
-    background-image: url('/zeplin/img/EkipmanAksesuarlar_ekipmanlar.png');
+    background-image: url('https://kahhve.com/zeplin/img/EkipmanAksesuarlar_ekipmanlar.png');
 }
 
 .katalog .siralama {
@@ -919,20 +919,20 @@ textarea {
 }
 
 .bulutlar {
-    background-image: url("/zeplin/img/bulut.png");
+    background-image: url("https://kahhve.com/zeplin/img/bulut.png");
     background-position: bottom right 50px;
     background-repeat: no-repeat;
     padding-bottom: 50px;
 }
 
 .beyaz-bulutlar {
-    background-image: url("/zeplin/img/bulut-beyaz.png");
+    background-image: url("https://kahhve.com/zeplin/img/bulut-beyaz.png");
     background-position: top 20px center;
     background-repeat: no-repeat;
 }
 
 .turuncu-bulutlar {
-    background-image: url("/zeplin/img/bulut-turuncu.png");
+    background-image: url("https://kahhve.com/zeplin/img/bulut-turuncu.png");
     background-position: top 20px center;
     background-repeat: no-repeat;
 }
@@ -969,17 +969,17 @@ div.ucan-yazi span {
 
 div.ucan-yazi .baslangic {
     width: 20px;
-    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-baslangic-turuncu.png");
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-baslangic.png");
 }
 
 div.ucan-yazi .bitis {
     width: 119px;
-    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-bitis-turuncu.png");
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-bitis.png");
     margin-left: -10px;
 }
 
 div.ucan-yazi .yazi {
-    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-orta-turuncu.png");
+    background-image: url("https://kahhve.com/zeplin/img/ucan-yazi-orta.png");
     line-height: 42px;
     margin-left: -10px;
     font-size: 24px;
@@ -1041,7 +1041,7 @@ section.katalog .filtreler .ekipman-icons div {
 }
 
 div.sepet-page {
-    background-image: url("/zeplin/img/bulutlar.png");
+    background-image: url("https://kahhve.com/zeplin/img/bulutlar.png");
     background-position: bottom 70px right 50px;
     background-repeat: no-repeat;
     background-size: 40%;
@@ -1316,14 +1316,14 @@ div.adres .adresler .active a.adres-adres {
 }
 
 .adres .odeme .visa .logo {
-    background-image: url("/zeplin/img/visa.png");
+    background-image: url("https://kahhve.com/zeplin/img/visa.png");
     width: 138px;
     height: 34px;
     margin: 0 auto;
 }
 
 .adres .odeme .visa .ssl {
-    background-image: url("/zeplin/img/ssl.png");
+    background-image: url("https://kahhve.com/zeplin/img/ssl.png");
     width: 138px;
     height: 55px;
     display: inline-block;
@@ -1608,11 +1608,11 @@ section.urun-sayfasi-sss .panel-collapse {
 }
 
 .katalog .urun-ilaveler .ust-kisim .yorumlar {
-    background-image: url('/zeplin/img/yorumlar.png');
+    background-image: url('https://kahhve.com/zeplin/img/yorumlar.png');
 }
 
 .katalog .urun-ilaveler .ust-kisim .soru-cevap {
-    background-image: url('/zeplin/img/soru-cevap.png');
+    background-image: url('https://kahhve.com/zeplin/img/soru-cevap.png');
 }
 
 .katalog .urun-ilaveler .tab-content {
@@ -1771,13 +1771,13 @@ section.siparislerim .urun-detay {
     display: inline-block;
     width: 30px;
     height: 19px;
-    background: url('/zeplin/img/star_secilidegil.png');
+    background: url('https://kahhve.com/zeplin/img/star_secilidegil.png');
     cursor: pointer;
     background-repeat: no-repeat;
 }
 
 .yorum-oy .star.secili {
-    background: url('/zeplin/img/star_secili.png')
+    background: url('https://kahhve.com/zeplin/img/star_secili.png')
 }
 
 .checkout-header {
@@ -2366,7 +2366,7 @@ section.siparislerim .urun-detay {
 }
 
 .abonelik .baslik {
-    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+    background-image: linear-gradient(to right, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('https://kahhve.com/zeplin/img/ekipman.jpg');
 }
 
 .abonelik .process {
@@ -2382,7 +2382,7 @@ section.siparislerim .urun-detay {
 }
 
 .abonelik .process .aralik-secimi {
-    background-image: url('/zeplin/img/abonelik-takvim.png');
+    background-image: url('https://kahhve.com/zeplin/img/abonelik-takvim.png');
     background-color: #d88f66;
 }
 
@@ -2392,7 +2392,7 @@ section.siparislerim .urun-detay {
 
 .abonelik .process .kahve-secimi {
     background-color: #cf7933;
-    background-image: url('/zeplin/img/abonelik-kahvecekirdek.png');
+    background-image: url('https://kahhve.com/zeplin/img/abonelik-kahvecekirdek.png');
 }
 
 .abonelik .process .kahve-secimi.kapali {
@@ -2401,7 +2401,7 @@ section.siparislerim .urun-detay {
 
 .abonelik .process .odeme-secimi {
     background-color: #c65800;
-    background-image: url('/zeplin/img/abonelik-kargo.png');
+    background-image: url('https://kahhve.com/zeplin/img/abonelik-kargo.png');
 }
 
 .abonelik .process .odeme-secimi.kapali {
@@ -2448,7 +2448,7 @@ section.siparislerim .urun-detay {
 }
 
 .abonelik .hikaye .resim {
-    background-image: url('/zeplin/img/abonelik-kahve1.jpg');
+    background-image: url('https://kahhve.com/zeplin/img/abonelik-kahve1.jpg');
     height: 100%;
     background-position: right ;
 }
@@ -2539,7 +2539,7 @@ section.siparislerim .urun-detay {
 }
 
 .abonelik .odeme, .abonelik.ayril {
-    background-image: url("/zeplin/img/bulut.png");
+    background-image: url("https://kahhve.com/zeplin/img/bulut.png");
     background-position: bottom right 50px;
     background-repeat: no-repeat;
     padding-bottom: 50px;
@@ -2701,7 +2701,7 @@ section.siparislerim .urun-detay {
     }
 
     section.banner .img {
-        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('/zeplin/img/bann.jpg');
+        background-image: url('https://kahhve.com/zeplin/img/bulut-banner.png'), linear-gradient(to bottom, #5f3818 20%, rgba(0, 0, 0, 0) 120%), url('https://kahhve.com/zeplin/img/bann.jpg');
     }
 
     section.banner .banner1 .img {
@@ -2776,11 +2776,11 @@ section.siparislerim .urun-detay {
     }
 
     .katalog .baslik.kahveler {
-        background-image: linear-gradient(to bottom, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('/zeplin/img/kahve.jpg');
+        background-image: linear-gradient(to bottom, #d25600 38.24%, rgba(149, 61, 0, 0.71) 68.49%, transparent 90%), url('https://kahhve.com/zeplin/img/kahve.jpg');
     }
 
     .katalog .baslik.ekipmanlar {
-        background-image: linear-gradient(to bottom, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('/zeplin/img/ekipman.jpg');
+        background-image: linear-gradient(to bottom, #5f3818 38.24%, rgba(95, 56, 24, 0.71) 68.49%, transparent 90%), url('https://kahhve.com/zeplin/img/ekipman.jpg');
     }
 
     section.urun-detay h1 {

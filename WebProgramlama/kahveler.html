@@ -41,7 +41,7 @@
                 <a class="turuncu icon-profil visible-sm visible-xs visible-md profil-toggle" href="#"></a>
                 <span class="sepet icon visible-sm visible-xs visible-md">
                     <i class="icon kahve icon-sepet"></i>
-                    <a href="/sepet" class="turuncu sepete"></a>
+                    <a href="sepet.html" class="turuncu sepete"></a>
                 </span>
             </div>
 
@@ -85,7 +85,7 @@
                                 <strong class="pull-right toplam buyuk2 turuncu">{{toplam}} TL</strong>
                             </div>
                                 <div class="voffset5 text-right beyaz">
-                                    <a class="btn" href="/sepet">SEPETE GİT</a>
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
                                     <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                                 <strong class="pull-right toplam buyuk2 turuncu">0.00 TL</strong>
                             </div>
                                 <div class="voffset5 text-right beyaz">
-                                    <a class="btn" href="/sepet">SEPETE GİT</a>
+                                    <a class="btn" href="sepet.html">SEPETE GİT</a>
                                     <a class="btn back-turuncu" href="/sepet/adres">ŞİPARİŞİ TAMAMLA</a>
                                 </div>
                             </div>
@@ -111,147 +111,134 @@
         </div>
     </header>
 
-  <div id="sepet1">
-    <div class="page-content" v-if="toplam === 0">
+    <div class="page-content">
 
-      <div class="sepet-page back-gray">
+      <div class="katalog">
+        <section class="baslik kahveler">
+          <div class="col-md-offset-1 col-md-6">
+            <h1 class="beyaz">KAHVE ÇEŞİTLERİ</h1>
+            <h2 class="kahve roboto">Kahveler</h2>
+            <div class="back-ekipman"></div>
+            <p class="beyaz roboto">Büyük bir hassasiyetle seçilip özenle kavrulmuş kahve çekirdeklerini kolayca temin edebilmeniz için sitemizde bir araya getirdik. Sipariş ettiğiniz kahvenizi dilerseniz çekirdek, dilerseniz de kullandığınız kahve demleme ekipmanınıza uygun olarak kargolamadan hemen önce öğütüp sizlere ulaştırıyoruz. <span>Hem de aynı gün kargoda!</span></p>
+          </div>
+        </section>
 
-      	<div class="container">
-      			<section class="header row">
-        			<div class="col-md-6">
-        				<h1 class="turuncu"><i class="icon icon-sepet"></i>SEPETİNİZ</h1>
-        				<p class="kahve roboto">Sepetinizde ürün bulunmamaktadır.</p>
-        			</div>
-        			<div class="col-md-6"></div>
-      		</section>
-      	</div>
+	    <section class="katalog" id="kahhveKahhveler">
+		    <div class="dropdown siralama">
+			    <a href="#" class="dropdown-toggle buyuk1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sıralama<span class="caret"></span></a>
+			      <ul class="dropdown-menu buyuk1">
+              <li><a v-on:click="azalanFiyat" href="#">Fiyat Azalan</a></li>
+              <li><a v-on:click="artanFiyat" href="#">Fiyat Artan</a></li>
+              <li><a href="#">Akıllı Sıralama</a></li> <!-- Sayfada olduğundan dolayı eklendi. Herhangi bir fonksiyonu yoktur. -->
+              <li><a href="#">Benzer Ürünler</a></li> <!-- Sayfada olduğundan dolayı eklendi. Herhangi bir fonksiyonu yoktur. -->
+			      </ul>
+		    </div>
+
+		    <div class="row no-padding">
+			    <div class="col-md-3 filtreler hidden-xs">
+				    <div class="sabit">
+					      <h3 class="turuncu">MARKA</h3>
+					      <ul class="marka-filtreleri">
+									<li><a v-on:click="bialettiSec" class="kahve marka-filtresi pointer">Bialetti(<span class="adet">2</span>)</a></li>
+									<li><a v-on:click="caffeFrescoSec" class="kahve marka-filtresi pointer">Caffe Fresco(<span class="adet">3</span>)</a></li>
+									<li><a v-on:click="caffeVergnanoSec" class="kahve marka-filtresi pointer">Caffe Vergnano(<span class="adet">4</span>)</a></li>
+                  <li v-on:click="kategoriUzat" v-if="noktalar" class="devamini-gor">.......</li>
+                  <li><a v-if="kategoriAcma" v-on:click="coffeeSapiensSec" class="kahve marka-filtresi pointer">Coffee Sapiens(<span class="adet">2</span>)</a></li>
+                  <li><a v-if="kategoriAcma" v-on:click="kronotropSec" class="kahve marka-filtresi pointer">Kronotrop(<span class="adet">1</span>)</a></li>
+							  </ul>
+
+    					  <h3 class="turuncu">ORIGIN</h3>
+                <ul class="marka-filtreleri">
+                  <li><a class="kahve marka-filtresi pointer">Antigua(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Blend(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Brazil(<span class="adet">5</span>)</a></li>
+                  <li class="devamini-gor">.......</li>
+                </ul>
+
+                <h3 class="turuncu">TAT</h3>
+                <ul class="marka-filtreleri">
+                  <li><a class="kahve marka-filtresi pointer">Aromalı Kahve(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Meyvemsi / Az Kavrulmuş(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Orta Yumuşak / Dengeli(<span class="adet">5</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Yoğun / Sert(<span class="adet">5</span>)</a></li>
+                </ul>
+                <h3 class="turuncu">EKİPMAN</h3>
+                <ul class="marka-filtreleri">
+                  <li><a class="kahve marka-filtresi pointer">Decaf Kahve(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Esspresso Kahve(<span class="adet">3</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Filtre Kahve(<span class="adet">5</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Kapsül Kahve(<span class="adet">5</span>)</a></li>
+                  <li><a class="kahve marka-filtresi pointer">Soğuk Kahve(<span class="adet">5</span>)</a></li>
+                </ul>
+				    </div>
+			    </div>
+			    <div class="col-md-9 urunler">
+				    <div class="row urun-listesi">
+              <div class="col-md-4 col-xs-6" v-for="(item, index) in hepsi">
+                <div v-if="item.isAvailable === true" class="urun">
+                  <a class="resim">
+                    <i class="icon icon-sepet back-turuncu beyaz katalog-sepete-ekle" v-on:click="kahhveSepeteEkle(index)"></i>
+                      <img class="" :src="item.image">
+                  </a>
+                  <a :href="item.url">
+                    <div class="title text-center">
+                      <span class="inner-title">{{ item.title }}</span>
+                    </div>
+                  </a>
+                  <a :href="item.markaurl"><div class="text-center marka roboto">{{ item.marka }}</div></a>
+                  <div class="text-center fiyat">
+                    <p>{{ item.fiyat }} TL</p>
+                  </div>
+                </div>
+                <div v-else class="urun">
+                  <a class="resim">
+                    <span class="stokta-yok back-turuncu beyaz">STOKTA YOK</span>
+                    <img class="" :src="item.image">
+                  </a>
+                  <a :href="item.url">
+                    <div class="title text-center">
+                      <span class="inner-title">{{ item.title }}</span>
+                    </div>
+                  </a>
+                  <a :href="item.markaurl"><div class="text-center marka roboto">{{ item.marka }}</div></a>
+                  <div class="text-center fiyat">
+                    <p>{{ item.fiyat }} TL</p>
+                  </div>
+                </div>
+              </div>
+						</div>
+				    <div class="row">
+					    <nav aria-label="Page navigation" class="navigation">
+					      <ul class="pagination">
+                  <li class="kahve">
+						        <a v-on:click="prevPage" aria-label="Previous">
+						          <span aria-hidden="true">«</span>
+						        </a>
+						      </li>
+					  			<li class="kahve"><a>1</a></li>
+					    		<li class="kahve"><a>2</a></li>
+					    		<li class="kahve">
+					          <a v-on:click="nextPage" aria-label="Next">
+					            <span aria-hidden="true">»</span>
+					          </a>
+					        </li>
+					      </ul>
+					    </nav>
+				    </div>
+            <div class="roboto light kahve">
+    					<h1>Kahve</h1> <!-- Doğrudan siteden kopyalanmıştır -->
+    					<p>Dünyada sudan sonra en çok tüketilen içecek olan kahve, günlük dünya çapında 2.25 milyar kupaya ulaştı. Kahve ağacının tohumu olan yeşil <strong>kahve çekirdekleri</strong> tropikal iklimde yüksek bölgelerde yetişmektedir. Birçok çeşidi olmasına rağmen iki çeşit kahve türü yaygındır. <strong>Arabica</strong> kahve çekirdekleri dünya kahve üretiminin %80'ini oluşturmaktadır, %20'si ise <strong>robusta</strong> kahve çekirdekleridir.</p>
+    					<div><h3>Kahve Üretimi</h3><p>En çok kahve dünya üretiminin %25'lik kısmıyla <strong>Brezilya</strong>da gerçekleşmektedir. Onu sırasıyla; <strong>Vietnam</strong>, <strong>Kolombiya</strong>, <strong>Endonezya</strong> ve <strong>Etiyopya</strong> takip etmektedir. Neredeyse bütün ülkelerde senede bir kere hasat alınsa da kolombiya gibi bazı ülkelerde 2 defa hasat alınmaktadır. Kahve çekirdekleri yetiştikleri hava koşullarına, toprak bileşenlerine göre tat, aroma, acidite ve gövde özelliklerini almaktadır. Bu yüzden kahveler yetiştirildikleri bölgeye göre sınıflandırılırlar. Sadece bir yörede yetişmiş kahvelere <strong>single origin</strong>, birçok farklı bölgeden gelen kahvelerin karıştırılması ile elde edilen kahvelere harman(blend) denmektedir.</p></div>
+    					<div><h3>Kahve Kavurma</h3><p>Kahveler yeşil çekirdek olarak yıllarca bir değişiklik görmeden saklanabilirler. Bu yüzden kahveler yetiştirildikleri bölgelerden Türkiye'ye yeşil çekirdek olarak sevk edilmektedirler. <strong>Petra, Coffee Sapiens, Kronotrop, Cool Beans, Urban Grind, Caffe Fresco, Coffeerem, Coffeemamma, Overdose, Punctum, Shorts Coffee</strong> gibi markaların tecrübeli baristaları tarafından, kahvenin tadını en güzel ortaya çıkaracağını düşündükleri profilde kavrulurlar. <strong>Illy, Bialetti, Caffe Vergnano</strong> gibi klasik italya kahve kültürünü sürdüren markalar kahvelerini İtalya'da kavurup bütün dünyaya dağıtım yapmaktadır.</p></div>
+    					<div><h3>Kahve Çeşitleri</h3><p>Kahve, içecek olarak tüketebilmek için öğütülmeli ve demlenmelidir. İstenilen kahve tadına ve sahip olunan ekipmana göre demleme yöntemi seçilir. <strong>Espresso</strong>, yüksek basınçtaki sıcak suyun ince öğütülmüş kahve içinde geçirilerek demlenir. Az miktarda, yoğun ve kremamsı bir kahve elde edilir. <strong>Filtre kahve</strong>de sıcak su kahve üzerine dökülür, suyun kahvenin özünü alması beklenir ve filtrelenerek bir kupa veya karafa aktarılır.</p></div>
+    					<div><h3>Kahve Demleme Ekipmanları</h3><p>Kavrulmuş kahve çekirdeklerinin kullanılacak ekipmana uygun boyutta öğütülmesi gerekmektedir. Türk Kahvesi için çok ince; espresso için ince; hario, moka pot, aeropress için ince-orta; filtre kahve makinesi için orta; chemex için orta-kalın; french press için kalın; soğuk demleme için çok kalın öğütülmüş kahve kullanılması uygun olacaktır.</p>
+    					</div>
+				    </div>
+			    </div>
+		    </div>
+	    </section>
       </div>
     </div>
-
-    <div class="page-content" v-else>
-
-      <div class="sepet-page back-gray">
-
-      	<div class="container">
-      			<section class="ana header row">
-      			<div class="col-md-12">
-      				<h1 class="turuncu"><i class="icon icon-sepet"></i>SEPETİNİZ</h1>
-      				<span class="turuncu buyuk2 roboto">Siparişinizi hemen tamamlayabilirseniz ürünleriniz bugün kargoda.					<a data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="Stoklarımız anlık olarak sitemizde güncellenmektedir. Bu sayede gelen siparişleri hemen hazırlayıp gönderebiliyoruz." data-original-title="Kargolanma Zamanı" tabindex="0">
-      						<span class="glyphicon glyphicon-info-sign"></span>
-      					</a>
-      				</span>
-      			</div>
-      		</section>
-      		<div class="seperator"></div>
-      		<section class="sepet-urunler">
-      			<div style="margin-top: 30px;" v-for="(item, index) in cart">
-      			  <div class="sepet-urun">
-      				  <a :href="item.url"><img :src="item.image"></a>
-      				  <div class="detay">
-      					  <a :href="item.url"><div class="turuncu urun-ismi">{{ item.title }}</div></a>
-      					  <a :href="item.markaurl"><div class="kahve roboto marka">{{ item.marka }}</div></a>
-      					  <div style="min-height: 35px; margin-bottom: 40px;">
-      							<div class="dropdown ea-select secenek">
-      						    <a data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="Kahvelerimiz çekirdek olarak elimizde bulunmaktadır. Siparişiniz sonrası demleme yapacağınız ekipmana göre öğütme yapılacaktır. Bu yüzden hangi ekipman ile demleme yapacağınızı belirtmeniz gerekmektedir. Eğer öğütmeyi kendiniz yapmayı planlıyorsanız seçenek olarak çekirdek seçmeniz yeterli olacaktır." data-original-title="Öğütme Boyutu Nedir?" tabindex="0" style="top: 4px;position: absolute;font-size: 20px;right: 25px;color: #c25800;">
-      							    <span class="glyphicon glyphicon-question-sign"></span>
-      						    </a>
-      					  		<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      								  <span class="text text-left">Kahve Öğütme Boyutu</span>
-      						  		<span class="caret"></span>
-      							  </button>
-                      <ul class="dropdown-menu" aria-labelledby="adet">
-	    							    	<li><a>French Press</a></li>
-		    						    	<li><a>Chemex</a></li>
-		    						    	<li><a>Metal Filtre</a></li>
-		    						    	<li><a>Kağıt Filtre</a></li>
-		    						    	<li><a>Hario</a></li>
-		    						    	<li><a>Aeropress</a></li>
-		    						    	<li><a>Moka Pot</a></li>
-		    						    	<li><a>Espresso</a></li>
-		    						    	<li><a>Soğuk Demleme</a></li>
-		    						    	<li><a>Çekirdek</a></li>
-		    						    	<li><a>Syphon</a></li>
-						    			</ul>
-      						  </div>
-      							<div class="dropdown ea-select adet">
-      							  <button class="dropdown-toggle" type="button" id="adet" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      								<span class="text text-left">1</span>
-      								<span class="caret"></span>
-      							  </button>
-      							  <ul class="dropdown-menu" aria-labelledby="adet">
-														<li><a>1 Adet</a></li>
-														<li><a>2 Adet</a></li>
-														<li><a>3 Adet</a></li>
-														<li><a>4 Adet</a></li>
-														<li><a>5 Adet</a></li>
-														<li><a>6 Adet</a></li>
-														<li><a>7 Adet</a></li>
-														<li><a>8 Adet</a></li>
-														<li><a>9 Adet</a></li>
-														<li><a>10 Adet</a></li>
-														<li><a>11 Adet</a></li>
-														<li><a>12 Adet</a></li>
-														<li><a>13 Adet</a></li>
-														<li><a>14 Adet</a></li>
-														<li><a>15 Adet</a></li>
-														<li><a>16 Adet</a></li>
-														<li><a>17 Adet</a></li>
-														<li><a>18 Adet</a></li>
-														<li><a>19 Adet</a></li>
-														<li><a>20 Adet</a></li>
-														<li><a>21 Adet</a></li>
-														<li><a>22 Adet</a></li>
-														<li><a>23 Adet</a></li>
-														<li><a>24 Adet</a></li>
-														<li><a>25 Adet</a></li>
-      									</ul>
-      						  </div>
-      						<div class="ea-close roboto light kahve text-center"><a v-on:click="sepettenSil(index)" href="#">×</a></div>
-      					  </div>
-      					<div class="fiyat kahve"><span>{{ item.fiyat }}</span> TL</div>
-      				  </div>
-      			  </div>
-      		  </div>
-      		</section>
-      		<div class="seperator"></div>
-      		<div class="kargo-ucreti">
-      			<div class="turuncu ucret">
-      				<span class="roboto">Kargo Ücreti:</span>
-      									<span v-if="toplam > 100" class="kahve">ÜCRETSİZ</span>
-                        <span v-else class="fiyat kahve" style="padding-left: 10px;position: relative;">
-						              <span>5.99</span> TL
-					              </span>
-      			</div>
-      			<div class="ucan-yazi pull-right"><span class="baslangic"></span><span class="yazi kahve">100 TL ÜZERİNE KARGO BİZDEN!</span><span class="bitis"></span></div>
-      		</div>
-      		<div class="seperator"></div>
-      		<div class="promosyon">
-      			<form method="post" action="/sepet/promosyon">
-      				<input type="text" name="promosyon" placeholder="Promosyon kodunuz varsa giriniz">
-      				<input type="submit" value="KULLAN" class="btn">
-      			</form>
-      		</div>
-      		<div class="seperator"></div>
-      		<form class="toplam" action="/sepet/notkaydet" method="POST">
-      			<div class="pull-left not">
-      				<textarea placeholder="Sipariş Notunuz" name="siparis_notu"></textarea>
-      									<a href="/sepet/hediyeekle" class="kahve buyuk1 voffset2">
-      						<i class="icon-checkbox"></i>
-      						<span class="yazi">Siparişimin <span class="turuncu">hediye paketi</span> olarak gönderilmesini istiyorum.<span class="turuncu"> (7.99 <span class="kucuk2">TL</span>)</span></span>
-      					</a>
-      							</div>
-      			<div class="pull-left">
-      				<div class="toplam-yazi turuncu">TOPLAM</div>
-      				<div class="toplam-fiyat kahve"><span>{{ toplam }}</span> TL</div>
-      			</div>
-      			<div class="pull-right">
-      				<button type="submit" class="btn">SİPARİŞ VER</button>
-      			</div>
-      		</form>
-      		</div>
-      </div>
-    </div>
-</div>
 
     <section class="container-fluid kupa-sayisi">
     	<div class="roboto light govde">
@@ -311,6 +298,7 @@
     		</div>
     	</div>
     </section>
+
 
     <footer id="footer" v-if="isAvailable" class="urunserit back-gray">
       <a v-on:click="acKapa" class="btn text-center back-turuncu">Bilgileri Kapat</a>
